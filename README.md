@@ -64,6 +64,12 @@ Der Datenordner (`data/`, **nicht** im Git-Repo, siehe `.gitignore`) enthält:
 - `YYYY-MM-DD.csv` — eine Datei pro Tag (UTC-Datum), eine Zeile pro Station und Poll:
   `station_id, timestamp, bikes_available, docks_available, is_renting, is_returning`.
   `timestamp` ist UTC im ISO-Format.
+- `weather.csv` — eine durchgehende Datei (kein Tages-Split, da winzig), eine Zeile pro
+  Stunde: `timestamp, latitude, longitude, temperature_2m, precipitation, wind_speed_10m,
+  relative_humidity_2m, weather_code`. Quelle: [Open-Meteo](https://open-meteo.com/)
+  (kostenlos, kein API-Key). Abgefragt wird der geografische Schwerpunkt aller
+  MyRadl-Stationen (aus `stations.csv` berechnet) — ein Wetterwert für die ganze Region,
+  nicht pro Station, da sich Wetter über die ~45x50 km des Servicegebiets kaum unterscheidet.
 
 Einzelne fehlgeschlagene Requests werden geloggt und der Collector macht beim nächsten
 Intervall einfach weiter, statt abzustürzen.
@@ -72,8 +78,9 @@ Intervall einfach weiter, statt abzustürzen.
 
 Damit die Erfassung nicht davon abhängt, dass der eigene Rechner läuft, gibt es zusätzlich
 [.github/workflows/collect.yml](.github/workflows/collect.yml): ein Workflow, der per Cron
-alle 10 Minuten `collector/poll.py --once` ausführt und die entstandenen CSVs auf einem
-eigenen, von main getrennten Branch **`data`** committet.
+alle 10 Minuten `collector/poll.py --once` ausführt (und einmal pro Stunde zusätzlich
+`collector/weather.py --once`) und die entstandenen CSVs auf einem eigenen, von main
+getrennten Branch **`data`** committet.
 
 - **main-Branch**: nur Code, bleibt sauber.
 - **data-Branch**: nur `stations.csv` + `YYYY-MM-DD.csv`, wächst mit jedem Poll. Historie

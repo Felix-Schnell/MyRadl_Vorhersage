@@ -55,6 +55,18 @@ jobs:
           MYRADL_DATA_DIR: ${{ github.workspace }}/data-branch
         run: python poll.py --once
 
+      - name: Wetter pollen (nur einmal pro Stunde)
+        working-directory: collector
+        env:
+          MYRADL_DATA_DIR: ${{ github.workspace }}/data-branch
+        run: |
+          minute=$(date -u +%M)
+          if [ "$minute" -lt 10 ]; then
+            python weather.py --once
+          else
+            echo "Ueberspringe Wetter-Fetch, nur zur vollen Stunde noetig (Minute=$minute)."
+          fi
+
       - name: Daten committen und pushen
         working-directory: data-branch
         run: |
