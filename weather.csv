@@ -1,0 +1,2 @@
+timestamp,latitude,longitude,temperature_2m,precipitation,wind_speed_10m,relative_humidity_2m,weather_code
+2026-08-04T23:01:44.169303+00:00,48.14365223282443,11.555172497455471,24.7,0.0,6.5,64,3
