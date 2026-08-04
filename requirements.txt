@@ -1,0 +1,4 @@
+requests
+pandas
+apscheduler
+python-dotenv
