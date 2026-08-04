@@ -1,0 +1,787 @@
+station_id,name,lat,lon,capacity,is_virtual_station
+608535280,Amtsgericht / Klinikum,48.182119,11.258064,,True
+608535281,Buchenau Bahnhof,48.160556,11.2244,,True
+608535282,Fürstenfeld,48.171345,11.247608,,True
+608535283,Fürstenfeldbruck Bahnhof,48.172396,11.262272,,True
+608535284,Hauptplatz,48.177894,11.255632,,True
+608535285,Kapellenstraße,48.182509,11.253274,,True
+608535286,Klosterstraße,48.174272,11.241322,,True
+608535287,Landratsamt,48.176677,11.260783,,True
+608535288,Pucher Meer (Parkplatz),48.18776,11.233439,,True
+608535289,Rudolf-Diesel-Ring,48.192993,11.250284,,True
+608535290,St. Bernhard,48.172186,11.232778,,True
+608535291,Theodor-Heuss-Straße,48.181375,11.242322,,True
+608535292,Alfons-Baumann-Straße,48.122496,11.353216,,True
+608535293,An den Gemeindewiesen,48.140383,11.359614,,True
+608535294,Bertha-von-Suttner-Straße / Theodor-Heuss-Straße,48.115044,11.3555,,True
+608535295,GEP,48.137313,11.373433,,True
+608535296,Germering-Unterpfaffenhofen Bahnhof,48.128957,11.36373,,True
+608535297,Gewerbegebiet Nord,48.139178,11.370889,,True
+608535298,Hallenbad,48.133156,11.372576,,True
+608535299,Harthaus Bahnhof,48.133642,11.386486,,True
+608535300,St.-Jakob-Straße,48.130562,11.351484,,True
+608535301,Königsberger Straße,48.136733,11.383645,,True
+608535302,Oskar-von-Miller-Straße,48.131863,11.371173,,True
+608535303,Otto-Wagner-Straße Nord,48.124643,11.366397,,True
+608535304,Rathaus,48.134827,11.362811,,True
+608535305,Streiflacher Straße,48.128287,11.373914,,True
+608535306,Grafrath Bahnhof,48.132405,11.152776,,True
+608535307,Am Sandberg,48.18344,11.387938,,True
+608535308,Am Zillerhof,48.186275,11.38352,,True
+608535309,Beislerstraße,48.179444,11.380757,,True
+608535310,Gröbenzell Bahnhof Süd / Kirchenstraße,48.194822,11.372656,,True
+608535311,Sportzentrum,48.193575,11.38457,,True
+608535312,Babenrieder Straße,48.162529,11.167998,,True
+608535313,Schöngeising Bahnhof Nord,48.147073,11.190071,,True
+608535314,Am Strasserwinkel,48.215347,11.270064,,True
+608535315,Ganghoferstraße,48.214342,11.287288,,True
+608535316,Gernlinden Bahnhof,48.213157,11.298278,,True
+608535317,Hans-Gruber-Platz,48.210856,11.2967,,True
+608535318,Maisach Bahnhof,48.214565,11.256503,,True
+608535319,Otto-Hahn-Straße,48.212351,11.244004,,True
+608535320,Bürgerhaus,48.205971,11.151883,,True
+608535321,Freizeitpark Mammendorf (Freibad),48.202536,11.171189,,True
+608535322,Mammendorf Bahnhof,48.216556,11.174148,,True
+608535323,Pfarrkirche,48.207825,11.164622,,True
+608535324,Auf der Insel,48.206662,11.327017,,True
+608535325,Esting Bahnhof,48.212724,11.318829,,True
+608535326,Ferdinandstraße,48.216143,11.346824,,True
+608535327,Gewerbepark Süd,48.227101,11.334508,,True
+608535328,Heimgartenstraße,48.196859,11.324711,,True
+608535329,Kapellenweg,48.225455,11.343241,,True
+608535330,Kriegerdenkmal,48.200154,11.309124,,True
+608535331,Olching Bahnhof,48.209717,11.334807,,True
+608535332,Alpenstraße,48.179304,11.36113,,True
+608535333,Birkenstraße,48.174638,11.359112,,True
+608535334,Boschstraße,48.170484,11.363384,,True
+608535335,Edelweißstraße / PUC,48.169771,11.345956,,True
+608535336,Friedenstraße,48.18263,11.371141,,True
+608535337,Friedhof Schopflach,48.163649,11.335233,,True
+608535338,Kriegerdenkmal,48.147102,11.347664,,True
+608535339,Laurenzer Grundschule,48.152464,11.341765,,True
+608535340,Lilienthalstraße,48.161214,11.342048,,True
+608535341,Nordendstraße,48.176307,11.365722,,True
+608535342,Puchheim Bahnhof Nord,48.172526,11.353002,,True
+608535343,Puchheim Bahnhof Süd,48.171984,11.351683,,True
+608535344,Sportzentrum,48.179592,11.354255,,True
+608535345,Rathaus,48.13893,11.206623,,True
+608535346,Schöngeising Bahnhof,48.146438,11.191714,,True
+608535256,Eching Bahnhof,48.303429,11.618548,,True
+608535257,Bürgersaal,48.281144,11.673717,4,True
+608535258,Bergstrasse,48.323108,11.599879,,True
+608535259,Rathaus,48.297144,11.622322,,True
+608535260,Am Isardamm,48.277602,11.673041,,True
+608535261,Hollerner See,48.283376,11.606952,,True
+608535262,IKEA,48.303778,11.634774,,True
+608535263,Hotel Olymp,48.298312,11.624925,,True
+608535265,Rathaus,48.318164,11.745158,,True
+608535266,Sportpark,48.322114,11.737419,,True
+608535267,Nachbarschaftshilfe,48.310556,11.749206,,True
+608535268,S-Bahn Hallbergmoos,48.308833,11.714621,,True
+608535270,Altes Rathaus,48.327697,11.752451,,True
+608535271,MABP Surftown,48.332461,11.731651,,True
+608535272,Neufahrn Bahnhof,48.320835,11.660394,,True
+608535273,Rathaus,48.317133,11.662304,,True
+608535274,"Mintraching, Spielplatz Feuerwehr",48.318879,11.68717,,True
+608535276,Lena-Christ-Straße,48.309108,11.665278,,True
+608535277,Sport- und Freizeitpark,48.322081,11.672788,,True
+608535278,Zeppelinstraße,48.31436,11.650398,,True
+608535279,Gewerbepark Römerweg,48.330098,11.692431,,True
+608535378,Heidenheimer Straße,48.247327,11.612108,,True
+608535379,Carl-von-Linde-Straße (Garching-Hochbrück),48.251581,11.606968,,True
+608535380,Dieselstraße (Garching-Hochbrück),48.254889,11.617622,,True
+608535381,Garchinger See (Garching),48.261523,11.640456,,True
+608535383,Jahnstraße (Garching-Hochbrück),48.247635,11.608093,,True
+608535384,Lilienthalstraße (Garching-Hochbrück),48.252431,11.620245,,True
+608535385,Maibaumplatz (Garching),48.249634,11.653183,,True
+608535386,Maier-Leibnitz-Straße (Garching),48.24993,11.64571,,True
+608535387,Parkring Ost (Garching),48.251713,11.637284,,True
+608535388,Parkring West (Garching),48.252165,11.633886,,True
+608535389,Professor-Angermair-Ring (Garching),48.245103,11.655635,,True
+608535390,Siemens/SAP (Garching Forschungszentrum),48.264493,11.661396,,True
+608535391,U-Bahnhof (Garching Forschungszentrum),48.264969,11.671454,,True
+608535392,Campus West (Garching Forschungszentrum),48.263358,11.665104,,True
+608535393,Lichtenbergstraße (Garching Forschungszentrum),48.268109,11.669114,,True
+608535394,U-Bahnhof (P+R) (Garching-Hochbrück),48.248359,11.631394,,True
+608535395,Untere Strassäcker (Garching),48.257185,11.654569,,True
+608535396,Voithstraße (Garching-Hochbrück),48.250049,11.612699,,True
+608535440,Bahnhof Nord (Ismaning),48.226437,11.679748,,True
+608535441,Bahnhof Süd (Ismaning),48.225292,11.678691,,True
+608535442,Oskar-Messter-Straße (Ismaning),48.233479,11.680209,,True
+608535443,Carl-Zeiss-Ring (Ismaning),48.236072,11.67964,,True
+608535444,Fischerhäuser (Ismaning),48.251724,11.69419,,True
+608535445,Wasserturm (Ismaning),48.220403,11.665488,,True
+608535446,AGROB Süd (Ismaning),48.208313,11.658857,,True
+608535447,Mayerbacherstraße (Ismaning),48.228368,11.684676,,True
+608535461,Helmholtz Zentrum (Oberschleißheim),48.219933,11.589283,,True
+608535462,Bahnhof Oberschleißheim,48.257973,11.558038,,True
+608535463,Veterinärstraße,48.248642,11.549747,,True
+608535464,Schloss Oberschleißheim,48.250599,11.561043,,True
+608535491,Am Bahnhof (S),48.189293,11.645839,,True
+608535492,Feringasee (Ost),48.191728,11.677217,,True
+608535493,Leinthaler Brücke,48.183,11.632371,,True
+608535494,Poschinger Weiher,48.200971,11.641153,,True
+608535495,Parkhaus Dieselstraße,48.185951,11.650884,,True
+608535496,Parkhaus Bürgerfestplatz,48.192544,11.655237,,True
+608535497,Bauhofstraße,48.201223,11.650217,,True
+608535498,Fichtenstraße,48.19779,11.651963,,True
+608535499,Blumenstraße,48.195136,11.646904,,True
+608535500,Bürgerhaus,48.191709,11.639557,,True
+608535501,Föhringer Allee,48.187134,11.641244,,True
+608535502,Feringastraße Ost,48.178157,11.635993,,True
+608535503,Apianstraße,48.175036,11.639062,,True
+608535504,Feringastraße,48.179985,11.631105,,True
+608535505,Feringasee (West),48.191295,11.664523,,True
+608535516,Unterschleißheim (S) Ost,48.272692,11.568468,,True
+608535517,Unterschleißheim (S) West,48.273039,11.56758,,True
+608535518,Unterschleißheim (S) St.-Benedikt-Straße,48.274712,11.569599,,True
+608535519,Unterschleißheim (S) Berglstraße,48.275193,11.56869,,True
+608535520,Lohhof (S) Süd,48.287895,11.581118,,True
+608535521,Lohhof (S) Nord,48.28808,11.580679,,True
+608535522,Sportpark,48.270009,11.585583,,True
+608535523,Altes Rathaus,48.281902,11.576054,,True
+608535524,Johann-Schmid-Straße,48.278358,11.581606,,True
+608535525,Riedmoos,48.268979,11.533116,,True
+608535526,Unterschleißheimer See,48.286179,11.552244,,True
+608535527,Kiebitzstraße,48.28043,11.587453,,True
+608535528,Mallertshoffener Straße,48.262584,11.589574,,True
+608535529,Am Weiher,48.280435,11.556115,,True
+608535530,Stadtwerke Unterschleißheim,48.283693,11.572017,,True
+608535531,Emmy-Noether-Ring Business Campus,48.275469,11.561265,,True
+608535532,Röntgenstraße,48.282397,11.566866,,True
+608535533,Ohmstraße,48.287158,11.570431,,True
+608535534,Ballhausforum,48.284271,11.564689,,True
+608535537,Alfred-Nobel-Straße Business Campus,48.276502,11.560718,,True
+608535398,Bahnhof (Gräfelfing),48.121098,11.425649,,True
+608535399,Bahnhof Lochham (Gräfelfing),48.129418,11.430742,,True
+608535400,Lochhamer Schlag (Gräfelfing),48.122026,11.451154,,True
+608535402,Würmtalstraße (Gräfelfing),48.115415,11.440033,,True
+608535403,Kirchweg (Gräfelfing),48.125229,11.445698,,True
+608535404,Doemens (Gräfelfing),48.120768,11.446022,,True
+608535405,Derbolfinger Platz (Grünwald),48.041865,11.523734,,True
+608535406,Bavariafilmplatz (Grünwald),48.067423,11.546563,,True
+608535407,Bavariafilmstraße (Grünwald),48.065753,11.554089,,True
+608535408,Parkplatz (Grünwald),48.055074,11.540914,,True
+608535409,Ludwig-Thoma-Straße (Grünwald),48.049592,11.535365,,True
+608535410,Musikschule (Grünwald),48.050489,11.533111,,True
+608535411,Freizeitpark (Grünwald),48.049033,11.52849,,True
+608535412,Laufzorner Straße (Grünwald),48.036067,11.528432,,True
+608535413,Josef-Sammer-Straße (Grünwald),48.039208,11.534973,,True
+608535414,Wörnbrunn (Grünwald),48.038854,11.548214,,True
+608535415,Lil-Dagover-Ring (Grünwald),48.064798,11.556074,,True
+608535416,Tölzer Straße (Grünwald),48.034844,11.521349,,True
+608535417,Robert-Koch-Straße (Grünwald),48.062765,11.544919,,True
+608535418,Haus der Begegnung (Grünwald),48.0388,11.527856,,True
+608535419,Martin-Kneidl-Grundschule (Grünwald),48.044656,11.524422,,True
+608535420,Bahnhof Süd (Haar),48.110711,11.731274,,True
+608535421,Bahnhof Nord (Haar),48.111714,11.730938,,True
+608535422,Ferd.-Kobell-Straße (Haar),48.103411,11.722933,,True
+608535423,Hans-Stießberger-Straße (Haar),48.110938,11.715021,,True
+608535424,Jagdfeldhochhaus (Haar),48.1083,11.723526,,True
+608535425,Waldluststraße (Haar),48.104181,11.729069,,True
+608535426,Ottendichl Kirche (Ottendichl),48.12692,11.741225,,True
+608535427,Salmdorf Kirche (Salmdorf),48.130671,11.716349,,True
+608535428,IAK Klinikum (Haar),48.116445,11.741971,,True
+608535429,Bahnhof (Gronsdorf),48.119347,11.699794,,True
+608535430,Sportpark (Haar),48.114494,11.728949,,True
+608535431,Klinikum Mitte (Haar),48.116487,11.746498,,True
+608535438,S-Bahnhof Hohenbrunn (Hohenbrunn),48.047218,11.698346,,True
+608535439,Steinstraße (Hohenbrunn),48.062083,11.679794,,True
+608535432,S-Bahnhof Nord,48.019222,11.718707,,True
+608535433,Bahnhof (Höhenkirchen-Siegertsbrunn),48.017067,11.719139,,True
+608535434,Rathaus,48.016069,11.712816,,True
+608535435,Sportplatz Siegertsbrunn ETC,48.01789,11.734888,,True
+608535436,Ortsmitte Siegertsbrunn,48.02425,11.72857,,True
+608535437,Sportplatz Höhenkirchen,48.025028,11.701432,,True
+608535448,Ammerthalstraße (Heimstetten),48.150935,11.74959,,True
+608535449,Bahnhof Süd (Heimstetten),48.158369,11.758887,,True
+608535450,Pfarrer-Caspar-Mayr-Platz (Kirchheim),48.176741,11.755441,,True
+608535451,Räterzentrum (Heimstetten),48.16348,11.756829,,True
+608535483,Fasanenpark Ost (Neubiberg),48.079753,11.610314,,True
+608535484,Bahnhofsplatz (Neubiberg),48.076462,11.660084,,True
+608535485,Campeon (Neubiberg),48.078716,11.615636,,True
+608535486,Bamerstraße (Neubiberg),48.079446,11.645409,,True
+608535487,Universitätsstraße (Neubiberg),48.081829,11.63288,,True
+608535488,Werner-Heisenberg-Weg (Neubiberg),48.078347,11.651776,,True
+608535489,Hohenbrunner Str. / Prof. - Göttsberger - Str.,48.073284,11.670583,,True
+608535490,Wotanstraße (Neubiberg,48.074283,11.678966,,True
+608535452,Altes Rathaus (Neuried),48.093395,11.465476,,True
+608535453,Zugspitzstraße (Neuried),48.087947,11.469806,,True
+608535454,Kraillinger Weg (Neuried),48.092398,11.456418,,True
+608535455,Am Haderner Winkel (Neuried),48.094649,11.464114,,True
+608535456,Am Sportpark (Neuried),48.087564,11.461622,,True
+608535457,Forstenrieder Straße (Neuried),48.091461,11.469223,,True
+608535458,Deisenhofen Bahnhof (Oberhaching),48.019833,11.583125,,True
+608535459,Furth Bahnhof (Oberhaching),48.034959,11.592397,,True
+608535460,Schmidweg (Oberhaching),48.031311,11.583427,,True
+608535465,Bahnhof Ost (Planegg),48.10559,11.414315,,True
+608535466,Behringstraße (Planegg),48.110628,11.431463,,True
+608535467,Otto-Pippel-Straße (Planegg),48.106504,11.427588,,True
+608535468,Kettelerstraße (Planegg),48.103033,11.429318,,True
+608535469,Lochhamer Straße (Martinsried Nord),48.111146,11.451776,,True
+608535470,Max-Planck-Institute (Martinsried),48.105904,11.459104,,True
+608535471,LMU (Martinsried),48.110407,11.460697,,True
+608535473,Kopernikusweg (Martinsried),48.104359,11.44667,,True
+608535474,Röntgenstraße (Martinsried),48.109298,11.449702,,True
+608535475,IZB (Martinsried),48.107887,11.459063,,True
+608535476,Pullach Bahnhof (Pullach im Isartal),48.05884,11.522067,,True
+608535477,Großhesselohe Bahnhof (Pullach im Isartal),48.070574,11.531098,,True
+608535478,Waldwirtschaft (Pullach im Isartal),48.067451,11.539233,,True
+608535479,Rathaus (Pullach im Isartal),48.054615,11.519177,,True
+608535480,Jakobusplatz,48.053556,11.512561,,True
+608535481,Bahnhof Höllriegelskreuth,48.042723,11.509806,,True
+608535482,Großhesseloher Brücke/ Adolf-Wenz-Siedlung,48.074718,11.539836,,True
+608535507,Fasanenpark West (Unterhaching),48.079566,11.607543,,True
+608535508,Am Sportpark (Unterhaching),48.072361,11.620452,,True
+608535509,Landschaftspark (Unterhaching),48.068851,11.619201,,True
+608535510,Sankt-Alto-Straße (Unterhaching),48.071386,11.606387,,True
+608535511,Bahnhof West (Unterhaching),48.064884,11.612099,,True
+608535512,Gewerbegebiet (Unterhaching),48.056144,11.605162,,True
+608535513,KUBIZ (Unterhaching),48.062174,11.614574,,True
+608535514,Rathausplatz (Unterhaching),48.066131,11.609576,,True
+608535515,Freibad (Unterhaching),48.062385,11.62118,,True
+608535347,Bahnhof Seite Münchner Str.,47.884632,11.696689,,True
+608535348,Bahnhof Seite Erlkamer Str.,47.884702,11.697947,,True
+608535349,Standort Bosch,47.893039,11.720663,,True
+608535350,Standort Hexal,47.881076,11.712264,,True
+608535351,Rathaus/Marktplatz,47.877171,11.701189,,True
+608535352,"Bahnhof, Bahnhofstr./Ludwig-Thoma-Str.",47.910452,11.682256,,True
+608535353,"Gewerbegebiet, Hienlohestraße/Lehrer-Holl Str.",47.917588,11.676253,,True
+608535354,Ortsmitte,47.909992,11.675773,,True
+608535538,Asto Park (Gilching),48.091772,11.283013,,True
+608535539,S-Bahnhof Neugilching (Gilching),48.098072,11.287961,,True
+608535540,Gewerbepark Gilching Süd (Gilching),48.092467,11.310529,,True
+608535355,Heimstettener See (Aschheim),48.158132,11.737274,,True
+608535356,Feldkirchner Straße (Aschheim),48.170755,11.716695,,True
+608535357,Park & Ride - Anlage (Dornach),48.144795,11.680652,,True
+608535358,Gewerbegebiet Eichendorffstraße (Aschheim),48.165339,11.736585,,True
+608535359,Otto-Hahn-Straße (Dornach),48.147902,11.684935,,True
+608535360,Gewerbegebiet (Brunnthal Nord),48.040783,11.661507,,True
+608535361,Bogenstraße (Waldbrunn),48.041655,11.676953,,True
+608535362,Amselstraße (Gudrunsiedlung),48.035016,11.667445,,True
+608535363,Waldstraße (Neukirchstockach),48.034044,11.67733,,True
+608535364,Münchner Straße (Brunnthal),48.007148,11.6856,,True
+608535365,Bergstraße (Brunnthal),48.004922,11.680669,,True
+608535366,Tölzer Straße (Otterloh),47.995795,11.659562,,True
+608535367,Kirchplatz (Hofolding),47.984057,11.700169,,True
+608535368,Ottobrunner Straße (Faistenhaar),47.984287,11.715848,,True
+608535369,Waldsiedlung (Faistenhaar),47.99294,11.710879,,True
+608535370,Eugen-Sänger-Ring,48.041495,11.664519,,True
+608535371,Bahnhof (Feldkirchen),48.151266,11.731695,,True
+608535372,Dornacher Straße/Mozartstraße (Feldkirchen),48.151217,11.723097,,True
+608535373,Gewerbegebiet Süd Otto-Lilienthal-Ring (Feldkirchen),48.140805,11.739926,,True
+608535375,Gewerbegebiet Ost Philipp-Hauck-Straße (Feldkirchen),48.149798,11.743773,,True
+608535376,Münchner Straße (Feldkirchen),48.146452,11.728178,,True
+606857330,Studentenstadt U,48.183211,11.608321,,True
+608534898,Kreuzstraße,48.13493,11.567326,,True
+608534899,Oberanger / Klosterhofstraße,48.134225,11.570455,,True
+608534900,Corneliusstraße,48.133705,11.573102,,True
+608534901,Westenriederstraße (Ecke Radlsteg),48.13503,11.579129,,True
+608534902,Rindermarkt,48.136075,11.574184,,True
+608534903,Pacellistraße (nahe Promenadeplatz),48.14047,11.571224,,True
+608534904,Platz der Opfer des Nationalsozialismus,48.142614,11.573662,,True
+608534905,Knöbelstraße,48.136097,11.584209,,True
+608534906,Westenriederstraße (Tal),48.134982,11.581161,7,True
+608534907,Maximilianstrasse (Ecke Residenzstr.),48.139451,11.577781,,True
+608534908,Thierschplatz,48.139301,11.588804,,True
+608534909,Lerchenfeldstraße,48.143412,11.589044,,True
+608534910,Paradiesstraße,48.146685,11.593243,,True
+608534912,Isartor S - Nord,48.134695,11.583001,,True
+608534913,Herzogspitalstraße HsNr. 4,48.137593,11.568819,,True
+608534914,Seeaustraße,48.144482,11.591632,,True
+608534915,Oettingenstraße,48.150388,11.595284,,True
+608534916,Hermann-Schmid-Straße,48.127621,11.553952,,True
+608534917,Mozartstraße / Goetheplatz,48.129893,11.55805,,True
+608534918,Dreimühlenstraße / Reifenstuelstraße,48.119946,11.558636,,True
+608534919,Baldeplatz,48.123315,11.566868,,True
+608534920,Sendlinger Tor U / Nußbaumstraße,48.133507,11.565029,,True
+608534921,Stephansplatz,48.130936,11.566215,,True
+608534922,Baaderstraße,48.133609,11.581624,,True
+608534923,Fraunhoferstraße,48.128511,11.576132,,True
+608534924,Kaiser-Ludwig-Platz,48.131402,11.555608,,True
+608534925,Am Glockenbach,48.126907,11.56714,,True
+608534926,Hermann-Lingg-Straße,48.138842,11.551604,,True
+608534927,Hauptbahnhof Süd I,48.138495,11.558703,,True
+608534928,Klenzestraße / Westermühlstraße,48.128371,11.570612,,True
+608534930,Theresienwiese,48.135844,11.551369,,True
+608534931,Ickstattstraße,48.129989,11.570392,,True
+608534932,Dreimühlenstraße,48.122721,11.562665,,True
+608534933,Goetheplatz / Waltherstraße,48.129059,11.558744,,True
+608534934,Gärtnerplatz / Reichenbachstraße,48.131419,11.576137,,True
+608534936,Pettenkoferstraße,48.134585,11.558244,,True
+608534937,Theresienwiese / St. Pauls-Platz,48.13662,11.553183,,True
+608534939,Königinstraße / Veterinärstraße,48.149777,11.584529,,True
+608534940,Tengstraße,48.154502,11.568135,,True
+608534942,Schleißheimerstraße / Schellingstraße,48.154477,11.560947,,True
+608534943,Hochschule München,48.155077,11.555503,,True
+608534944,Galeriestraße,48.14425,11.578666,,True
+608534945,ZOB - Bernhard-Wicki Straße,48.14272,11.548303,,True
+608534946,St. Benno,48.151933,11.55336,,True
+608534947,Deroystraße,48.143991,11.545243,,True
+608534948,Hochschule - Lothstraße Süd,48.154082,11.553551,,True
+608534950,Universität,48.149621,11.58067,,True
+608534952,Hauptbahnhof Nord,48.14199,11.561517,,True
+608534953,Prinz-Ludwig Straße / Barer Straße,48.145813,11.57014,,True
+608534954,Türkenstraße,48.150592,11.576219,,True
+608534955,Amalienstraße / Universität,48.151362,11.579209,,True
+608534956,TU München - Theresienstraße,48.150147,11.567852,,True
+608534957,Königin / Schönfeldstraße,48.145673,11.584113,,True
+608534958,Hohenzollernplatz,48.161175,11.568084,,True
+608534959,Scheidplatz,48.170829,11.573819,8,True
+608534960,Petuelring U Nord,48.175183,11.565786,,True
+608534961,Bonner Platz,48.167299,11.578208,,True
+608534962,Elisabethplatz,48.156768,11.573554,,True
+608534963,Herzogstraße,48.163588,11.563631,,True
+608534964,Destouchestraße,48.164581,11.574023,,True
+608534965,Kölner Platz / Hörwarthstraße,48.169619,11.578093,,True
+608534967,Rümannstraße,48.175689,11.574496,,True
+608534968,Clemensstraße,48.164327,11.56598,,True
+608534969,Birnauer Straße / Lerchenauer Straße,48.174247,11.56064,,True
+608534970,Georg-Birk-Straße,48.163277,11.557027,,True
+608534971,Kathi-Kobus Straße,48.159055,11.556286,,True
+608534973,Georgenstraße,48.155286,11.574996,,True
+608534974,Pündterplatz,48.162752,11.577341,,True
+608534975,Orleansplatz,48.128103,11.602686,,True
+608534976,Mariahilfstraße/Mariahilfplatz,48.125917,11.58257,,True
+608534977,Hochstrasse / Pöppelstraße,48.124261,11.585795,,True
+608534978,Bothestraße,48.136463,11.613007,,True
+608534979,Lucile-Grahn-Straße,48.135794,11.607648,,True
+608534980,Grillparzerstraße,48.136692,11.609877,,True
+608534981,Rosenheimer Platz,48.129187,11.594263,,True
+608534982,Weißenburger Platz,48.128895,11.596567,,True
+608534983,Ostbahnhof/Belfortstraße,48.129069,11.603514,,True
+608534984,Welfenstraße,48.122349,11.588445,,True
+608534985,Kolumbusplatz,48.120906,11.576194,,True
+608534986,Max-Weber-Platz Ost,48.135588,11.600923,,True
+608534987,Falkenstraße,48.123427,11.58008,,False
+608534988,Rosenheimer Straße,48.127906,11.594455,,True
+608534990,Schlottauerstraße,48.123219,11.575405,,True
+608534991,Preysingstraße,48.132268,11.591071,,True
+608534992,Mariahilfplatz Süd,48.12486,11.582164,,True
+608534993,Schleibingerstrasse,48.128421,11.591358,,True
+608534994,Regerplatz,48.124676,11.587948,,True
+608534995,Wiener Platz,48.134825,11.595959,,True
+608534996,Hochstraße / Rosenheimer Straße,48.130996,11.589698,,True
+608534998,Kirchenstrasse / Seeriederstraße,48.133665,11.602209,,True
+608534999,Implerstraße,48.121298,11.548541,,True
+608535000,Brudermühlstraße,48.111142,11.548427,,True
+608535001,Spitzwegstraße,48.123018,11.541546,,True
+608535002,Gotzinger Platz,48.118209,11.551265,,True
+608535003,Lagerhausstraße / Thalkirchner Straße,48.120182,11.555557,,True
+608535004,Engelhardstraße,48.112929,11.538838,,True
+608535005,Herzog-Ernst-Platz,48.125192,11.541307,,True
+608535006,Kidlerplatz,48.116949,11.541678,,True
+608535007,Am Harras süd,48.116592,11.539068,,True
+608535008,Mittersendling S Ost,48.108405,11.536971,,True
+608535009,Aberlestraße,48.122236,11.545044,,True
+608535010,Schäftlarnstraße / Gasteig HP8,48.112044,11.553298,,True
+608535011,Margaretenplatz,48.120002,11.540473,,True
+608535012,Resi-Huber-Platz,48.112665,11.549053,,True
+608535013,Nestroystraße,48.121426,11.534685,,True
+608535014,Jean-Paul-Richter-Straße,48.1118,11.525932,,True
+608535015,Holzapfelstraße,48.138999,11.545876,,True
+608535016,Schwanthalerhöhe U Nord / Heimeranstraße,48.133773,11.544008,,True
+608535017,Westend,48.137823,11.531504,,True
+608535018,Trappentreustraße,48.133877,11.533746,,True
+608535019,Ganghoferstraße,48.137974,11.540766,,True
+608535020,Georg-Freundorfer-Platz / Sandtnerstraße,48.133177,11.538327,,True
+608535021,Alter Messeplatz,48.134634,11.545698,,True
+608535022,Guldeinstraße,48.138759,11.528959,,True
+608535023,Schießstättstraße,48.136952,11.545517,,True
+608535024,Hans-Fischer-Straße,48.127766,11.544436,,True
+608535025,Hirschbergstraße,48.148745,11.533839,,True
+608535026,Schluderstraße,48.150123,11.529,,True
+608535027,Steubenplatz Nord,48.150988,11.520659,,True
+608535028,Nibelungenstraße,48.153094,11.52792,,True
+608535029,Spiridon-Louis-Ring,48.167614,11.554154,,True
+608535030,Moosach Bahnhof,48.18024,11.507373,,True
+608535031,Sapporobogen,48.168886,11.536836,,True
+608535032,Westfriedhof Süd,48.169064,11.528738,,True
+608535033,Darmstädter Straße,48.175293,11.525683,,True
+608535034,Treitschkestraße,48.177135,11.521339,,True
+608535036,Pelkovenstraße,48.18115,11.510421,,True
+608535037,Moosacher St. Martins PLatz,48.181676,11.517408,,True
+608535038,Sickingerstraße,48.171936,11.505519,,True
+608535039,Moosstraße,48.176822,11.49671,,True
+608535040,Andenacher Straße,48.185654,11.524704,,True
+608535041,Georg-Brauchle-Ring U,48.176792,11.52949,,True
+608535042,Baubergerstraße,48.176646,11.505376,,True
+608535043,Stadtwerke München,48.171239,11.530954,,True
+608535044,Olympia-Pressestadt,48.180002,11.536811,,True
+608535045,Hugo-Troendle-Straße,48.178919,11.51495,,True
+608535046,Preußenstraße,48.186177,11.557269,,True
+608535047,Milbertshofen / Keferloherstraße,48.181798,11.572188,,True
+608535048,Frankfurter Ring U,48.185778,11.573208,,True
+608535049,Neuherbergstraße,48.209082,11.56504,,True
+608535050,Griegstraße,48.181686,11.584512,,True
+608535051,Schmalkaldener Straße,48.186906,11.584119,,True
+608535052,Olympiazentrum,48.178389,11.556516,,True
+608535053,Marienbaderstraße,48.193547,11.58324,,True
+608535054,Harthof,48.204771,11.570384,,True
+608535055,Ingolstädterstraße,48.196101,11.584007,,True
+608535057,Curt-Mezger-Platz,48.182013,11.566918,,True
+608535058,Rose-Pichler-Weg,48.210749,11.586228,,True
+608535059,Rockefellerstraße süd,48.206641,11.57959,,True
+608535060,Paracelsusstraße,48.201192,11.58952,,True
+608535061,Rockefellerstraße nord,48.209777,11.575216,,True
+608535062,Olympiazentrum ZHS,48.180573,11.547239,,True
+608535063,Troppauerstraße,48.195285,11.572336,,True
+608535064,Abtstraße,48.18439,11.578156,,True
+608535065,Rathenaustraße,48.201209,11.577427,,True
+608535066,Bertholdstraße,48.186131,11.566038,,True
+608535067,Karl-Weinmair-Straße,48.179601,11.589009,,True
+608535068,Marianne-Brandt-Straße,48.180743,11.593467,,True
+608535069,Admiralbogen,48.208239,11.613941,,True
+608535070,Ainmillerstraße,48.158332,11.584503,,True
+608535071,Wilhelm-Wagenfeld-Straße,48.182437,11.593753,,True
+608535072,Max-Bill-Straße,48.187053,11.593011,,True
+608535073,Haimhauser Straße,48.162243,11.587411,,True
+608535074,Gertrud-Grunow-Straße,48.183643,11.596546,,True
+608535075,Freimann,48.190721,11.614713,,True
+608535077,Mandl- / Gunezrainerstraße,48.15987,11.591767,,True
+608535078,Nordfriedhof U,48.173765,11.597309,,True
+608535079,Theodor-Dombart-Straße,48.173114,11.594121,,True
+608535080,St.-Nikolaus-Platz,48.192792,11.616112,,True
+608535081,Josef-Wirth-Straße,48.199241,11.626731,,True
+608535082,Carl-Orff-Bogen,48.207564,11.607999,,True
+608535083,Fröttmaning U,48.210092,11.614037,,True
+608535084,Nordfriedhof,48.172375,11.596858,,True
+608535085,Mildred-Scheel-Bogen,48.1757,11.581672,,True
+608535086,Königinstraße / Ohmstraße,48.153451,11.587692,,True
+608535087,Arabellapark,48.153002,11.62132,,True
+608535088,Siebertstraße,48.143687,11.601102,,True
+608535089,Prinzregentenstadion,48.139597,11.604241,,True
+608535090,Bundesfinanzhof,48.148214,11.605206,,True
+608535091,Herkomerplatz,48.150505,11.60884,,True
+608535092,Fritz-Meyer-Weg,48.172258,11.636217,,True
+608535093,Galileiplatz,48.144415,11.607187,,True
+608535094,Cosimastraße,48.163027,11.62937,,True
+608535095,Elektrastraße,48.151304,11.626196,,True
+608535096,Hofererweg,48.148617,11.628294,,True
+608535097,Gleimstraße,48.141575,11.6268,,True
+608535098,Daglfinger Straße,48.146417,11.640839,,True
+608535099,Königsbergerstraße,48.151808,11.640735,,True
+608535100,Meistersingerstraße,48.157879,11.640522,,True
+608535101,Wesendonkstraße,48.165255,11.628959,,True
+608535102,Fürkhofstraße,48.168059,11.634617,,True
+608535103,Lohengrinstraße,48.162805,11.62518,,True
+608535104,Wilhelm-Dieß-Weg,48.155228,11.636935,,True
+608535105,Bernheimerstraße,48.173565,11.629237,,True
+608535106,Mauerkirchner Straße,48.166898,11.618598,,True
+608535107,Gellertstrasse,48.162641,11.614954,,True
+608535108,Rohlfsstraße,48.140971,11.636567,,True
+608535109,Lüderitzstraße,48.140295,11.6434,,True
+608535110,Burgauerstraße,48.149652,11.657519,,True
+608535111,Kardinal-Wendel-Straße,48.166293,11.657063,,True
+608535112,Böhmerwaldplatz,48.142581,11.615048,,True
+608535113,Richard-Strauss-Straße,48.148596,11.616378,,True
+608535114,Mahirstraße,48.155977,11.614119,,True
+608535116,Cosimabad,48.154246,11.629261,,True
+608535117,Gemingstraße,48.143237,11.661442,,True
+608535118,Schlösselgarten,48.15901,11.629502,,True
+608535119,Höchlstraße,48.145695,11.601865,,True
+608535120,Knappertsbuschstraße,48.163298,11.640504,,True
+608535121,Prinzregentenplatz Nord,48.139733,11.607422,,True
+608535122,Michaelibad,48.11922,11.630509,,True
+608535123,Hermann-Weinhauser-Straße,48.133385,11.628823,,True
+608535124,August-Everding-Straße,48.125389,11.61037,,True
+608535125,Ostbahnhof/Friedenstraße,48.126758,11.608266,,True
+608535126,Kreillerstraße,48.125805,11.647788,,True
+608535127,Fehwiesenstraße,48.129299,11.624311,,True
+608535128,Hachinger-Bach Straße,48.119774,11.639069,,True
+608535129,St-Veit Straße,48.122728,11.642506,,True
+608535130,Hohenbrunnerstraße,48.119258,11.649278,,True
+608535131,Ursbergerstraße,48.130831,11.644692,,True
+608535132,Hansjakobstraße,48.127146,11.653469,,True
+608535133,Friedenstraße,48.124054,11.602249,,True
+608535134,Innsbrucker Ring U-Bahn Ost,48.120444,11.622317,,True
+608535135,Mühldorfstraße,48.127096,11.613289,,True
+608535136,Josephsburg U-Bahn,48.126289,11.632472,,True
+608535137,Grafinger Straße,48.124578,11.619448,,True
+608535138,Isareckstraße,48.128027,11.621821,,True
+608535139,Mutschellestraße,48.126359,11.638202,,True
+608535140,Gögginger Straße,48.122369,11.628135,,True
+608535141,Virgil- / Hansjakobstraße,48.130119,11.636914,,True
+608535142,Edinburghplatz,48.133198,11.689623,,True
+608535143,Trudering Bahnhof Süd,48.124822,11.664353,,True
+608535144,Gronsdorf Bahnhof,48.11804,11.697968,,True
+608535145,Friedenspromenade,48.112699,11.676805,,True
+608535146,Truderinger Straße,48.121528,11.671484,,True
+608535147,Perlach Bahnhof,48.094224,11.63063,,True
+608535148,Quiddestraße,48.106845,11.646671,,True
+608535149,Plettstraße,48.10683,11.640937,,True
+608535150,Karl-Marx-Zentrum,48.107981,11.656356,,True
+608535151,Giesinger Bahnhof I,48.110402,11.594512,,True
+608535152,Kesselbergstraße,48.112869,11.583699,,True
+608535153,Untersbergstraße,48.112087,11.587162,,True
+608535154,Ella-Lingens-Platz,48.10981,11.580252,,True
+608535155,Schyrenbad,48.120464,11.570291,,True
+608535156,Hans-Mielich-Platz,48.116473,11.570002,,True
+608535157,Candidplatz,48.112018,11.571463,,True
+608535158,Lebschéestraße,48.107519,11.565151,,True
+608535159,Fromundstraße,48.107716,11.576902,,True
+608535160,Tierpark / Alemannenstraße,48.10064,11.558403,,True
+608535162,Mangfallplatz,48.097194,11.581433,,True
+608535163,Karolingerallee,48.095101,11.557736,,True
+608535164,Hellabrunner Straße,48.110951,11.565297,,True
+608535165,Authariplatz,48.091793,11.563215,,True
+608535166,Südtiroler Straße,48.100778,11.567277,,True
+608535167,Schmorellplatz,48.081953,11.546977,,True
+608535168,Kastanienstraße,48.101765,11.58046,,True
+608535169,Säbener Straße,48.098196,11.571131,,True
+608535170,Bruggspergerstraße,48.086447,11.560821,,True
+608535171,Säbenerplatz,48.089551,11.574538,,True
+608535172,Schellenbergstraße,48.105725,11.574721,,True
+608535173,Klausener Straße,48.10335,11.573001,,True
+608535174,Hochleite - Zugang Marienklausenbrücke,48.092107,11.552297,,True
+608535175,St.-Quirin-Platz U,48.104556,11.581453,,True
+608535176,Wettersteinplatz U / Weningstraße,48.109311,11.57439,,True
+608535178,Kupferhammerstraße,48.118441,11.574923,,True
+608535179,Kemptener Straße,48.078873,11.483972,,True
+608535180,Thalkirchen,48.101304,11.546416,,True
+608535181,Obersendling,48.098617,11.537258,,True
+608535182,Albert Bayerle Platz,48.10014,11.529422,,True
+608535183,Ratzingerplatz,48.099902,11.522297,,True
+608535184,Drygalski Allee Nord,48.098845,11.509038,,True
+608535185,Forstenrieder Allee,48.095356,11.498043,,True
+608535186,Basler Straße U,48.09104,11.49118,,True
+608535187,Fürstenried West,48.088371,11.480756,,True
+608535188,Thurgaustraße,48.092152,11.480793,,True
+608535189,Forstenried,48.08479,11.494606,,True
+608535190,Springerstraße,48.081974,11.50333,,True
+608535192,Eberlestraße,48.078579,11.507955,,True
+608535193,Grünbauerstraße / Herterichstraße,48.076398,11.517174,,True
+608535194,Sollner Straße,48.077524,11.524738,,True
+608535195,Solln Bahnhof Wendeschleife,48.081394,11.527757,,True
+608535196,Grünbauerstraße/Hofbrunnstraße,48.08332,11.517733,,True
+608535197,Zeismeringer Straße,48.08823,11.519573,,True
+608535198,Maria-Einsiedel-Straße,48.095857,11.543037,,True
+608535199,Melchiorstraße,48.072438,11.519124,,True
+608535200,Siemenswerke,48.09348,11.530567,,True
+608535201,St.-Wendel-Straße,48.090862,11.53489,,True
+608535202,Josephinenstraße,48.082361,11.53662,,True
+608535203,Glötzleweg,48.08604,11.510067,,True
+608535204,Münsinger Straße,48.094357,11.516222,,True
+608535205,Maxhofstraße,48.083382,11.474474,,True
+608535206,Kriegelsteinerstraße,48.090145,11.497124,,True
+608535207,Becker-Gundahl-Straße,48.085813,11.525466,,True
+608535208,Königswieser Straße,48.083168,11.486061,,True
+608535209,Leutstettener Straße,48.093501,11.522254,,True
+608535210,Max-Lebsche-Platz,48.108855,11.476151,,True
+608535211,Am Hedernfeld,48.121859,11.474135,,True
+608535212,Drozzaweg,48.119891,11.477939,,True
+608535213,Wastl-Witt Straße west,48.126834,11.469635,,True
+608535214,Wastl-Witt Straße ost,48.128098,11.474167,,True
+608535215,Veilchenstraße,48.129008,11.483073,,True
+608535216,Ossingerstraße,48.120252,11.501537,,True
+608535217,Menaristraße,48.128501,11.493941,,True
+608535218,Stiftsbogen,48.119285,11.484481,,True
+608535219,Holzapfelkreuth,48.116495,11.501274,,True
+608535220,Kornwegerstraße,48.1128,11.495257,,True
+608535221,Aurikelstraße,48.107831,11.490503,,True
+608535222,Lorettoplatz,48.104225,11.488454,,True
+608535223,Am Waldrand,48.107028,11.482198,,True
+608535224,Altenastraße,48.114291,11.48567,,True
+608535225,Konrad-Dreher-Straße,48.128223,11.489695,,True
+608535226,Gondrellplatz,48.124585,11.490007,,True
+608535227,Haderner Stern,48.118499,11.489439,,True
+608535228,Ludwig-Hunger-Straße,48.118685,11.467851,,True
+608535229,Großhadern,48.115436,11.475624,,True
+608535230,Hans-Grässel Weg,48.113127,11.502006,,True
+608535231,Pasinger Marienplatz,48.146709,11.46005,,True
+608535232,Hermine-von-Parish-Straße,48.150228,11.476252,,True
+608535234,Westkreuz,48.147977,11.44211,,True
+608535235,Aubing,48.155602,11.414183,,True
+608535236,Neuaubing,48.142867,11.423266,,True
+608535237,Freiham,48.139371,11.410948,,True
+608535238,Am Kosttor,48.138335,11.580954,,True
+608535239,"Sparkassenstraße, nördl. Tal",48.136871,11.57762,,True
+608535240,"Maximilianstraße, östl. Herzog-Rudolf-Str.",48.138504,11.583453,,True
+608535241,Brunnstraße,48.136264,11.56864,,True
+608535242,Laimer Platz,48.135404,11.500964,,True
+608535243,Aindorferstraße / Rushaimerstraße,48.132325,11.494171,,True
+608535244,Agnes-Bernauer-Straße,48.139516,11.511111,,True
+608535245,Aindorferstraße,48.131108,11.501099,,True
+608535246,Friedenheimer Straße,48.134625,11.511949,,True
+608535247,Westendstraße,48.13501,11.521975,,True
+608535248,Landsberger Straße / Elsenheimer Straße,48.141413,11.517044,,True
+608535249,Lautensackstraße,48.138777,11.517862,,True
+608535250,Rechpacherstraße,48.132577,11.486845,,True
+608535251,Agnes Bernauer Platz,48.14029,11.496202,,True
+608535252,Pörtschacher Straße,48.144439,11.490785,,True
+608535254,Sandrartstraße,48.139857,11.50742,,True
+608535255,Laim S / Wotanstraße,48.143726,11.50286,,True
+613312171,Blumenstraße - Planungsreferat,48.13238,11.571394,,True
+613312172,Odeonsplatz (Ostseite),48.143268,11.57804,,True
+613312173,Christophstraße,48.141061,11.58307,,True
+613312174,Boschbrücke,48.131134,11.582159,,True
+613312175,Deutsches Museum,48.1316,11.58534,,True
+613312176,Marsplatz,48.146354,11.546639,,True
+613312177,Luisenstraße,48.152263,11.568061,,True
+613312179,Königsplatz U / Karlstraße,48.144154,11.563007,,True
+613312180,Agnesstraße,48.158277,11.562847,,True
+613312181,Stiglmaierplatz,48.1473,11.559695,,True
+613312182,Stachus - Justizpalast,48.139931,11.565032,,True
+613312183,Arnulfstraße - ZOB,48.143396,11.550393,,True
+613312184,Schwere Reiter Straße,48.161334,11.55692,,True
+613312185,Ackermannstraße / Schleißheimerstraße,48.168248,11.564684,,True
+613312186,Bismarckstraße,48.162412,11.581602,,True
+613312187,Auerfeldstraße,48.124138,11.59681,,True
+613312188,Kellerstraße,48.130857,11.594334,,True
+613312189,Wörthstraße,48.131591,11.598489,,True
+613312190,Kirchenstraße,48.132646,11.609138,,True
+613312191,Steinerstraße,48.103894,11.539732,,True
+613312192,Pullacher Platz,48.105394,11.545422,,True
+613312193,Am Flauchersteg,48.107177,11.552422,,True
+613312194,Höglwörther Straße,48.10608,11.522882,,True
+613312195,Mittersendling West,48.108897,11.534912,,True
+613312196,Luise-Kiesselbach-Platz,48.112654,11.519251,,True
+613312197,Waldfriedhofstraße,48.113463,11.515531,,True
+613312198,Waldfriedhof,48.112061,11.503793,,True
+613312199,Einhornallee,48.107665,11.511278,,True
+613312200,Markomannenstraße,48.105386,11.505467,,True
+613312201,Hinterbärenbadstraße,48.120626,11.528467,,True
+613312202,Westendstraße,48.123732,11.508038,,True
+613312203,Illingstraße,48.103491,11.524717,,True
+613312204,Partnachplatz,48.116802,11.526109,,True
+613312205,Westpark,48.117857,11.516793,,True
+613312206,Drachenseestraße,48.117041,11.531579,,True
+613312207,Trappentreustraße / Donnersbergerbrücke,48.13917,11.534863,,True
+613312208,Donnersbergerbrücke,48.143629,11.536143,,True
+613312209,Hedwig-Dransfeld-Allee,48.165228,11.545215,,True
+613312210,Fasaneriestraße,48.15753,11.54324,,True
+613312211,Gerner Brücke,48.158862,11.526036,,True
+613312212,Burghausener Straße,48.14759,11.529289,,True
+613312213,Hirschgarten,48.144816,11.520115,,True
+613312214,Engasserbogen,48.145712,11.511511,,True
+613312215,Nymphenburg Süd,48.146143,11.502216,,True
+613312216,Kemnatenstraße,48.151997,11.504383,,True
+613312217,Romanstraße,48.155119,11.505992,,True
+613312218,Volpinistraße,48.165104,11.512722,,True
+613312219,Dall'Armistraße,48.161672,11.511572,,True
+613312220,Donnersbergerstraße,48.146596,11.535694,,True
+613312221,Rotkreuzplatz,48.15311,11.531966,,True
+613312222,Amalienburgstraße,48.165325,11.493301,,True
+613312223,Botanischer Garten,48.164677,11.502466,,True
+613312224,Dom-Pedro-Straße,48.159708,11.535028,,True
+613312225,Albrechtstraße,48.155193,11.540151,,True
+613312226,Leonrodplatz,48.1597,11.546576,,True
+613312227,Christoph-Rapparini-Bogen,48.145804,11.506386,,True
+613312228,Hanebergstraße,48.162338,11.536755,,True
+613312229,Donauwörther Straße,48.184202,11.496734,,True
+613312230,Memminger Platz,48.181013,11.506254,,True
+613312231,Olympia Einkaufszentrum,48.182376,11.528717,,True
+613312233,Anhalter Platz,48.187042,11.56156,,True
+613312234,Am Hart U,48.197716,11.57208,,True
+613312236,Oberwiesenfeld U-Bahn West,48.186592,11.546192,,True
+613312237,Wilhelm-Hertz-Straße,48.175945,11.585842,,True
+613312238,Schwedenstraße,48.169586,11.603003,,True
+613312239,Wiltrudenstraße,48.167377,11.59151,,True
+613312240,Alte Haide U,48.177842,11.602486,,True
+613312241,Parzivalplatz,48.171033,11.584974,,True
+613312242,Kieferngarten,48.203392,11.612684,,True
+613312243,St. Emmeram,48.176074,11.631513,,True
+613312244,Kufsteiner Platz,48.14997,11.60174,,True
+613312245,Effnerplatz Nordost,48.152697,11.614833,,True
+613312246,Baumkirchnerstraße,48.128503,11.630727,,True
+613312247,Ampfingstraße,48.130363,11.615767,,True
+613312248,Martin-Empl-Ring,48.140954,11.682629,,True
+613312249,Lehrer-Wirth-Straße,48.129475,11.694919,,True
+613312250,Selma-Lageröf-Straße,48.129964,11.702747,,True
+613312251,U-Bahn Moosfeld,48.131133,11.671374,,True
+613312252,Wardeinstraße,48.12467,11.655903,,True
+613312253,Karpfenstraße,48.122928,11.662454,,True
+613312254,Feldbergstraße,48.108699,11.663219,,True
+613312255,Postweg,48.117954,11.68393,,True
+613312256,Spertentalstraße,48.118144,11.670033,,True
+613312257,Georg-Kerschensteiner-Straße,48.132961,11.697017,,True
+613312258,Messestadt Ost U-Bahn,48.13336,11.703236,,True
+613312259,Friesplatz,48.100622,11.672228,,True
+613312260,Ungsteiner Straße,48.114724,11.597168,,True
+613312261,Ramersdorf,48.115401,11.612403,,True
+613312262,Führichstraße,48.116431,11.614696,,True
+613312263,Thomasiusplatz,48.11535,11.603387,,True
+613312264,Balanstraße,48.109407,11.603445,,True
+613312265,Georg-Brauchle-Haus,48.109805,11.63923,,True
+613312266,Hochäckerstraße,48.101156,11.606903,,True
+613312267,Sudermannallee,48.097677,11.65268,,True
+613312268,Hermann-Pünder-Straße,48.089132,11.636949,,True
+613312269,Maria-Wimmer-Straße,48.08516,11.661418,,True
+613312270,Woferlstraße,48.108984,11.619507,,True
+613312271,Karl-Preis-Platz,48.118064,11.610177,,True
+613312272,St.-Martin-Straße Ost,48.119507,11.600463,,True
+613312273,Neuperlach Zentrum,48.100853,11.646309,,True
+613312274,Nawiaskystraße,48.106409,11.636608,,True
+613312275,Neuer Südfriedhof,48.101227,11.622042,,True
+613312276,Schlierseestraße,48.115517,11.592303,,True
+613312277,Pöllatstraße,48.105517,11.591138,,True
+613312278,Lincolnstraße,48.095167,11.59126,,True
+613312279,Minnewitstraße,48.086997,11.599204,,True
+613312281,Ostfriedhof,48.117519,11.582032,,True
+613312282,St. Martin-Straße S-Bahn,48.118254,11.594671,,True
+613312283,Tegernseer Platz,48.115501,11.580741,,True
+613312284,Schafreiterplatz,48.102482,11.595012,,True
+613312285,Sintpertstraße,48.110642,11.589249,,True
+613312286,Zugspitzplätzchen,48.116522,11.58336,,True
+613312287,Grünspitz,48.113202,11.576828,,True
+613312288,Am Bergsteig,48.118881,11.579973,,True
+613312289,Theodolindenplatz,48.090711,11.558066,,True
+613312290,Rolf-Pinegger-Straße,48.12582,11.47709,,True
+613312291,Pasing Bahnhof Süd,48.149102,11.459789,,True
+613312292,Mitterfeldstraße,48.137897,11.483132,,True
+613312293,Veldener Straße,48.145169,11.479889,,True
+613312294,Avenariusplatz,48.142389,11.450851,,True
+613312295,Polkostraße,48.159762,11.445722,,True
+613312296,Am Knie,48.142045,11.474476,,True
+613312297,Mainaustraße,48.148679,11.434234,,True
+613312298,Fritz-Bauer-Straße,48.141112,11.422564,,True
+613312299,Wiesentfelser Straße West,48.146347,11.413553,,True
+613312300,Wiesentfelser Straße Ost,48.147422,11.42077,,True
+613312301,Sportanlagen Freiham,48.142403,11.403044,,True
+613312302,Riesenburgstraße,48.150968,11.412909,,True
+613312303,Leinweberweg,48.176321,11.417194,,True
+613312304,Zwiedineckstraße,48.180353,11.464696,,True
+613312305,Korbinian-Beer-Straße,48.183463,11.479739,,True
+613312306,Manzostraße,48.183831,11.48817,,True
+613312307,SV Untermenzing,48.176131,11.466134,,True
+613312308,Augustin-Rösch-Straße,48.200656,11.564274,,True
+613312309,Feldmochinger Anger,48.209216,11.544466,,True
+613312310,Hasenbergl,48.213754,11.55654,,True
+613312311,Feldmoching I,48.213674,11.540333,,True
+613312312,Dülferstraße U West,48.213283,11.561993,,True
+613312313,Ittlingerstraße,48.208336,11.555278,,True
+613312314,Eduard-Spranger-Straße,48.207722,11.550141,,True
+613312315,Fachnerstraße,48.131088,11.509525,,True
+613510037,Geroltstraße,48.131332,11.538334,,True
+624056982,Großhartpenning,47.846653,11.678266,,True
+624057057,Föching,47.895636,11.716353,,True
+631244273,Rosental (Ecke Sendlinger Str.),48.136158,11.572902,,True
+631244274,Rotkreuzplatz / Donnersbergerstraße,48.152129,11.533139,,True
+631244275,Hauptbahnhof Süd II,48.13867,11.558547,,True
+631244276,Maillingerstraße,48.150433,11.544812,,True
+631244277,Pronnerplatz,48.143954,11.495654,,True
+631244278,Karl-Theodor-Straße,48.166603,11.578666,,True
+631244280,Hubertusstraße,48.156172,11.519937,,True
+631244281,Heideckstraße,48.162561,11.541947,,True
+631244286,Josephsplatz,48.155853,11.566783,,True
+631244287,Gärtnerplatz/Klenzestraße,48.132015,11.576589,,True
+631244288,Trautenwolffsstraße,48.158032,11.585294,,True
+631244289,Heimeranplatz / Heimeranstraße,48.133639,11.534625,,True
+631244290,Hackenstraße,48.135974,11.570573,,True
+631244291,Herzog-Wilhelm-Straße (Ecke Herzogspitalstr.)),48.138069,11.566756,,True
+631244292,"Maderbräustraße, nördl. Tal",48.136474,11.578355,,True
+631244293,Giesinger Bahnhof II,48.110773,11.59507,,True
+631244294,Maximilianstraße (Ecke Falkenturmsstr.),48.139117,11.579655,,True
+631244295,"Münzstraße, westl. Platzl",48.137697,11.579333,,True
+631244297,Blutenburgstraße,48.151975,11.535357,,True
+631244302,Romanplatz,48.154083,11.511376,,True
+631244303,Schloss Nymphenburg,48.158324,11.51078,,True
+631244304,Margarethe-Danzi-Straße,48.147096,11.49644,,True
+631244306,Hirschgarten - Haupteingang,48.150428,11.510606,,True
+631244308,Untermenzing S-Bahn Nord,48.178159,11.474491,,True
+631244309,Nederlinger Straße,48.163433,11.520516,,True
+631244311,Sadelerstraße,48.165216,11.520771,,True
+631244312,Gern,48.163429,11.528919,,True
+631244313,Am Harras nord,48.117401,11.539889,,True
+631244315,Erzgießereistraße,48.148849,11.552554,,True
+631244316,Brienner Straße,48.143039,11.575778,,True
