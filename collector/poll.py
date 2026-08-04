@@ -7,6 +7,7 @@ alle 10 Minuten abzufragen -- POLL_INTERVAL_SECONDS deshalb nicht verkleinern.
 
 import csv
 import logging
+import sys
 import time
 from datetime import datetime, timezone
 
@@ -85,7 +86,11 @@ def run_forever() -> None:
 
 
 if __name__ == "__main__":
-    try:
-        run_forever()
-    except KeyboardInterrupt:
-        logger.info("Collector gestoppt (Ctrl+C)")
+    if "--once" in sys.argv:
+        # Einmaliger Lauf fuer z.B. GitHub Actions, wo der Scheduler extern (Cron) sitzt.
+        poll_once()
+    else:
+        try:
+            run_forever()
+        except KeyboardInterrupt:
+            logger.info("Collector gestoppt (Ctrl+C)")

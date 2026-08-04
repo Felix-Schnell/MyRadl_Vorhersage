@@ -68,9 +68,29 @@ Der Datenordner (`data/`, **nicht** im Git-Repo, siehe `.gitignore`) enthält:
 Einzelne fehlgeschlagene Requests werden geloggt und der Collector macht beim nächsten
 Intervall einfach weiter, statt abzustürzen.
 
+## Cloud-Collector (GitHub Actions)
+
+Damit die Erfassung nicht davon abhängt, dass der eigene Rechner läuft, gibt es zusätzlich
+[.github/workflows/collect.yml](.github/workflows/collect.yml): ein Workflow, der per Cron
+alle 10 Minuten `collector/poll.py --once` ausführt und die entstandenen CSVs auf einem
+eigenen, von main getrennten Branch **`data`** committet.
+
+- **main-Branch**: nur Code, bleibt sauber.
+- **data-Branch**: nur `stations.csv` + `YYYY-MM-DD.csv`, wächst mit jedem Poll. Historie
+  dort einsehbar/klonbar mit `git clone --branch data --single-branch <repo-url>`.
+- Kostenlos, weil das Repo public ist (Standard-Runner sind für öffentliche Repos
+  unbegrenzt kostenlos). Bei einem privaten Repo würde das 10-Minuten-Intervall das
+  Freikontingent von 2.000 Minuten/Monat sprengen.
+- GitHub garantiert bei `schedule`-Triggern kein exaktes Timing — Verzögerungen von
+  5–30 Minuten sind normal, besonders zur vollen/halben Stunde. Für dieses Projekt
+  unkritisch.
+- Manuell auslösen: im GitHub-Repo unter Actions → "Collect MyRadl data" →
+  "Run workflow".
+
 ## Bekannte Einschränkung
 
-Der Collector läuft nur lokal und nur, solange `poll.py` aktiv ist und der Rechner läuft —
-es gibt Lücken bei jedem Neustart, Schlafmodus oder Absturz. Für lückenlose 24/7-Erfassung
-später auf eine Cloud-Lösung umziehen (z.B. GitHub Actions als Cron-Trigger + gehostete
-Datenbank statt lokaler CSV-Dateien).
+Lokal (`python collector/poll.py`) läuft der Collector nur, solange das Skript aktiv ist
+und der Rechner läuft — es gibt Lücken bei Neustart, Schlafmodus oder Absturz. Der
+GitHub-Actions-Workflow oben deckt das ab, solange das Repo public bleibt und niemand die
+Scheduled Workflows deaktiviert (GitHub pausiert sie automatisch nach 60 Tagen Inaktivität
+im Repo — dann reicht ein beliebiger Commit/Push, um sie zu reaktivieren).
