@@ -1,19 +1,19 @@
-name: Collect MyRadl data
+name: Collect weather data
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "0 * * * *"
   workflow_dispatch: {}
 
 permissions:
   contents: write
 
 concurrency:
-  group: myradl-collect
+  group: myradl-weather
   cancel-in-progress: false
 
 jobs:
-  poll:
+  weather:
     runs-on: ubuntu-latest
     steps:
       - name: Code auschecken (main)
@@ -40,20 +40,11 @@ jobs:
             find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
           fi
 
-      - name: Stationsstammdaten aktualisieren, falls noch nicht vorhanden
+      - name: Wetter pollen
         working-directory: collector
         env:
           MYRADL_DATA_DIR: ${{ github.workspace }}/data-branch
-        run: |
-          if [ ! -f "$MYRADL_DATA_DIR/stations.csv" ]; then
-            python stations.py
-          fi
-
-      - name: Station-Status pollen
-        working-directory: collector
-        env:
-          MYRADL_DATA_DIR: ${{ github.workspace }}/data-branch
-        run: python poll.py --once
+        run: python weather.py --once
 
       - name: Daten committen und pushen
         working-directory: data-branch
@@ -62,7 +53,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           if ! git diff --cached --quiet; then
-            git commit -m "Poll $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            git commit -m "Weather poll $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
             git push origin HEAD:data
           else
             echo "Keine Aenderungen, kein Commit noetig."
