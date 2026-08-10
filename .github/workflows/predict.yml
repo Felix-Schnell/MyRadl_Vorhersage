@@ -32,39 +32,29 @@ jobs:
       - name: Zuletzt trainierte Modelle holen
         run: |
           git fetch origin models
-          git worktree add models-branch models
           mkdir -p model/artifacts
-          cp models-branch/*.json model/artifacts/
+          git archive origin/models | tar -x -C model/artifacts
 
       - name: Vorhersagen generieren
         working-directory: model
         run: python generate_predictions.py
 
-      - name: gh-pages-Branch auschecken
+      - name: Karte auf gh-pages-Branch committen und pushen
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git fetch origin gh-pages 2>/dev/null || true
-          if git show-ref --verify --quiet refs/remotes/origin/gh-pages; then
-            git worktree add gh-pages-branch gh-pages
-          else
-            git worktree add --detach gh-pages-branch
-            cd gh-pages-branch
-            git switch --orphan gh-pages
-            git rm -rf --cached . >/dev/null 2>&1 || true
-            find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
-          fi
-
-      - name: docs in gh-pages-Branch kopieren
-        run: |
-          rsync -a --delete docs/ gh-pages-branch/
-
-      - name: Karte committen und pushen
-        working-directory: gh-pages-branch
-        run: |
+          rm -rf /tmp/gh-pages-out && mkdir -p /tmp/gh-pages-out
+          cd /tmp/gh-pages-out
+          git init -q
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          git fetch --quiet origin gh-pages 2>/dev/null && git checkout -q -b gh-pages FETCH_HEAD || git checkout -q --orphan gh-pages
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp -r "$GITHUB_WORKSPACE"/docs/. .
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           if ! git diff --cached --quiet; then
-            git commit -m "Update predictions $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            git commit -q -m "Update predictions $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
             git push origin HEAD:gh-pages
           else
             echo "Keine Aenderungen, kein Commit noetig."

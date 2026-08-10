@@ -33,31 +33,22 @@ jobs:
         working-directory: model
         run: python train.py
 
-      - name: models-Branch auschecken
+      - name: Modelle auf models-Branch committen und pushen
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git fetch origin models 2>/dev/null || true
-          if git show-ref --verify --quiet refs/remotes/origin/models; then
-            git worktree add models-branch models
-          else
-            git worktree add --detach models-branch
-            cd models-branch
-            git switch --orphan models
-            git rm -rf --cached . >/dev/null 2>&1 || true
-            find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
-          fi
-
-      - name: Trainierte Modelle in models-Branch kopieren
-        run: |
-          rsync -a --delete model/artifacts/ models-branch/
-
-      - name: Modelle committen und pushen
-        working-directory: models-branch
-        run: |
+          rm -rf /tmp/models-out && mkdir -p /tmp/models-out
+          cd /tmp/models-out
+          git init -q
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          git fetch --quiet origin models 2>/dev/null && git checkout -q -b models FETCH_HEAD || git checkout -q --orphan models
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          cp "$GITHUB_WORKSPACE"/model/artifacts/*.json .
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           if ! git diff --cached --quiet; then
-            git commit -m "Train models $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+            git commit -q -m "Train models $(date -u +'%Y-%m-%dT%H:%M:%SZ')"
             git push origin HEAD:models
           else
             echo "Keine Aenderungen, kein Commit noetig."
