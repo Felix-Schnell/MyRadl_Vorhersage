@@ -55,11 +55,17 @@ Pipeline einfach mit wachsendem `data`-Branch erneut laufen zu lassen.
   Stationsfarbe nach Füllstand, Klick/Popup zeigt aktuellen Stand + Vorhersage +
   80%-Unsicherheitsband. Zwischen den trainierten Horizonten wird im Frontend linear
   interpoliert (kein Modell pro einzelner Stunde, siehe unten warum).
-- **`.github/workflows/predict.yml`** — läuft stündlich (`25 * * * *`, versetzt zu
-  Collector/Wetter-Workflows), trainiert neu, generiert `predictions.json`, kopiert
-  `docs/` in einen separaten `gh-pages`-Branch (gleiches Worktree-Pattern wie
-  `collect.yml`/`weather.yml` für den `data`-Branch) und pusht. **main bleibt damit
-  weiterhin nur Code**, der `gh-pages`-Branch ist die deploybare Ausgabe.
+- **`.github/workflows/train.yml`** — läuft **wöchentlich** (Montag 03:00 UTC),
+  trainiert alle Horizont-Modelle neu und committet sie auf einen eigenen
+  `models`-Branch (gleiches Worktree-Pattern wie beim `data`-Branch).
+- **`.github/workflows/predict.yml`** — läuft **stündlich** (`25 * * * *`, versetzt zu
+  Collector/Wetter-Workflows), holt die zuletzt trainierten Modelle vom `models`-Branch
+  (kein erneutes Training), generiert `predictions.json` mit dem **aktuellen**
+  Räderstand + den Vorhersagen des letzten Wochentrainings, kopiert `docs/` in den
+  `gh-pages`-Branch und pusht. So bleibt die Karte stündlich aktuell (aktueller
+  Stand), ohne dass das Modell jede Stunde neu trainiert wird. **main bleibt damit
+  weiterhin nur Code**, `gh-pages` ist die deploybare Ausgabe, `models` das trainierte
+  Modell.
 - **`requirements-model.txt`** — zusätzliche ML-Abhängigkeiten (xgboost,
   scikit-learn), getrennt von `requirements.txt`, damit der Collector (läuft auch in
   GitHub Actions) schlank bleibt.
@@ -130,9 +136,11 @@ Der Plan war, dass Claude GitHub Pages automatisch aktiviert (Source: `gh-pages`
 Branch), aber die lokale Umgebung hatte **kein `gh` CLI installiert**, daher konnte
 das nicht automatisiert werden. Zwei offene Schritte, bevor die Karte online ist:
 
-1. `.github/workflows/predict.yml` muss mindestens einmal laufen (automatisch stündlich,
-   oder manuell über GitHub → Actions → "Update prediction map" → "Run workflow"),
-   damit der `gh-pages`-Branch überhaupt existiert.
+1. `.github/workflows/train.yml` muss **zuerst einmal** laufen (automatisch Montag
+   03:00 UTC, oder manuell über GitHub → Actions → "Train prediction model" →
+   "Run workflow"), damit der `models`-Branch existiert. Danach `predict.yml`
+   laufen lassen (automatisch stündlich, oder manuell über "Update prediction map" →
+   "Run workflow") — braucht die Modelle vom `models`-Branch, schlägt sonst fehl.
 2. Im Repo unter **Settings → Pages → Source** auf "Deploy from a branch" stellen,
    Branch `gh-pages`, Ordner `/ (root)`. Danach ist die Karte unter
    `https://felix-schnell.github.io/MyRadl_Vorhersage/` erreichbar (kann ein paar
@@ -146,10 +154,11 @@ das nicht automatisiert werden. Zwei offene Schritte, bevor die Karte online ist
   stündlich automatisch neu (`predict.yml`), sollte also von selbst besser werden.
   Sinnvoll wäre ein bewusster Check nach 2–3 Wochen, wenn mindestens ein voller
   Wochenzyklus vorliegt, ob die Baseline endlich geschlagen wird.
-- **Trainingszeit im Auge behalten** — `predict.yml` trainiert bei jedem Lauf (stündlich)
-  alle 8 Horizont-Modelle komplett neu. Das skaliert nicht ewig; wenn der `data`-Branch
-  deutlich wächst, Training und Predictions-Generierung entkoppeln (z.B. Training nur
-  täglich, Predictions stündlich mit dem zuletzt trainierten, committeten Modell).
+- **Trainingszeit im Auge behalten** — Training läuft jetzt nur noch wöchentlich
+  (`train.yml`), Predictions stündlich mit dem letzten trainierten Modell
+  (`predict.yml`). Falls das wöchentliche Training selbst mit wachsendem `data`-Branch
+  zu lange dauert, ggf. Trainingsfenster begrenzen (z.B. nur letzte N Wochen statt
+  gesamter Historie).
 - **Metriken pro Station statt nur global** — aktuell wird MAE/RMSE über alle
   Stationen gemittelt berichtet. Aufschlüsselung nach Stationstyp (fest/virtuell,
   viel/wenig Verkehr) wäre informativ.

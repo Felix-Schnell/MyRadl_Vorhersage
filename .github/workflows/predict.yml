@@ -29,9 +29,12 @@ jobs:
       - name: Abhaengigkeiten installieren
         run: pip install -r requirements-model.txt
 
-      - name: Modelle trainieren
-        working-directory: model
-        run: python train.py
+      - name: Zuletzt trainierte Modelle holen
+        run: |
+          git fetch origin models
+          git worktree add models-branch models
+          mkdir -p model/artifacts
+          cp models-branch/*.json model/artifacts/
 
       - name: Vorhersagen generieren
         working-directory: model

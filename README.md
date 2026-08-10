@@ -121,7 +121,8 @@ python -m http.server 8000 --directory docs   # lokal testen
 
 Details, aktueller Modellstand und offene Punkte: [model/STATUS.md](model/STATUS.md).
 
-`.github/workflows/predict.yml` trainiert stündlich neu und deployed die Karte auf den
-`gh-pages`-Branch — Live-Version unter
+`.github/workflows/train.yml` trainiert wöchentlich neu, `.github/workflows/predict.yml`
+aktualisiert stündlich den aktuellen Stand + deployed die Karte auf den `gh-pages`-Branch
+— Live-Version unter
 [felix-schnell.github.io/MyRadl_Vorhersage](https://felix-schnell.github.io/MyRadl_Vorhersage/)
 (sobald GitHub Pages im Repo aktiviert ist, siehe STATUS.md).
