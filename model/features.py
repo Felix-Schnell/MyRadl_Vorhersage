@@ -82,15 +82,22 @@ def add_station_features(df: pd.DataFrame, stations: pd.DataFrame) -> pd.DataFra
     return df.merge(station_cols, on="station_id", how="left")
 
 
-def add_lag_and_target(df: pd.DataFrame) -> pd.DataFrame:
+HORIZONS = [1, 2, 3, 4, 6, 8, 10, 12]  # Stunden; dazwischen wird im Frontend interpoliert
+
+
+def add_lag_and_targets(df: pd.DataFrame, horizons: list[int] = HORIZONS) -> pd.DataFrame:
     df = df.sort_values(["station_id", "timestamp"]).copy()
     grouped = df.groupby("station_id")["bikes_available"]
     df["lag_1h"] = grouped.shift(1)
     df["lag_2h"] = grouped.shift(2)
     df["lag_3h"] = grouped.shift(3)
     df["rolling_mean_3h"] = grouped.shift(1).rolling(3).mean().reset_index(level=0, drop=True)
-    df["target"] = grouped.shift(-1)
+    for h in horizons:
+        df[f"target_h{h}"] = grouped.shift(-h)
     return df
+
+
+TARGET_COLUMNS = [f"target_h{h}" for h in HORIZONS]
 
 
 FEATURE_COLUMNS = [
@@ -124,5 +131,5 @@ def build_dataset(
     hourly = add_time_features(hourly)
     hourly = add_weather_features(hourly, weather)
     hourly = add_station_features(hourly, stations)
-    hourly = add_lag_and_target(hourly)
+    hourly = add_lag_and_targets(hourly)
     return hourly

@@ -107,26 +107,21 @@ konfigurierten 15 Minuten: real kommen oft nur 6–30 Polls pro Tag mit Luecken 
 30 Minuten bis über 2 Stunden an, statt der theoretischen ~96. Das Feature Engineering im
 `model/`-Ordner geht davon bewusst aus (stündliches Resampling statt fester Lags).
 
-## Vorhersagemodell (Prototyp)
+## Vorhersagemodell + Karte (Prototyp)
 
-Erster grober Baseline-Ansatz im `model/`-Ordner: XGBoost-Regression, die
-`bikes_available` pro Station eine Stunde in die Zukunft vorhersagt.
+Im `model/`-Ordner: XGBoost-Quantil-Modelle (P10/P50/P90), die `bikes_available` pro
+Station für Horizonte 1–12h vorhersagen, plus eine interaktive Karte unter `docs/`.
 
 ```bash
 pip install -r requirements-model.txt
 python model/train.py
+python model/generate_predictions.py
+python -m http.server 8000 --directory docs   # lokal testen
 ```
 
-Das Skript lädt die Daten direkt aus dem `data`-Branch (kein lokaler Checkout nötig),
-resampled pro Station auf ein stündliches Raster (die Polls kommen zu unregelmäßig für
-feste Lags), baut Zeit-, Wetter-, Stations- und Lag-Features und trainiert mit einem
-zeitbasierten Train/Test-Split (letzter Tag = Test). Ergebnis wird gegen eine
-Persistenz-Baseline ("in 1h wie jetzt") verglichen und unter `model/artifacts/`
-gespeichert.
+Details, aktueller Modellstand und offene Punkte: [model/STATUS.md](model/STATUS.md).
 
-**Stand mit ~7 Tagen Daten:** Die Baseline schlägt XGBoost bei MAE knapp (0.63 vs. 0.74),
-bei RMSE liegt XGBoost leicht vorn (1.45 vs. 1.48) — mit dieser Datenmenge dominiert der
-letzte bekannte Wert (`lag_1h`) mit ~64% Feature-Importance alles andere, Zeit- und
-Wetter-Features tragen noch kaum etwas bei. Erwartbar bei einer Woche Historie ohne
-vollen Wochenzyklus; die Pipeline ist aber darauf ausgelegt, mit wachsendem
-`data`-Branch einfach erneut ausgeführt zu werden.
+`.github/workflows/predict.yml` trainiert stündlich neu und deployed die Karte auf den
+`gh-pages`-Branch — Live-Version unter
+[felix-schnell.github.io/MyRadl_Vorhersage](https://felix-schnell.github.io/MyRadl_Vorhersage/)
+(sobald GitHub Pages im Repo aktiviert ist, siehe STATUS.md).

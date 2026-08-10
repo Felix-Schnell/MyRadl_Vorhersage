@@ -1,4 +1,4 @@
-# Status: Vorhersagemodell (Stand 2026-08-10)
+# Status: Vorhersagemodell + Karte (Stand 2026-08-10, Session 2)
 
 Diese Datei ist der Übergabepunkt für eine Fortsetzung auf einem anderen Rechner /
 in einem anderen Chat. Sie fasst zusammen, was gebaut wurde, warum genau so, und was
@@ -41,24 +41,76 @@ Pipeline einfach mit wachsendem `data`-Branch erneut laufen zu lassen.
   - Lag-Features: `lag_1h`, `lag_2h`, `lag_3h`, `rolling_mean_3h`
   - Ziel: `target` = `bikes_available` der Station **1 Stunde in der Zukunft**
 - **`model/train.py`** — zeitbasierter Train/Test-Split (letzte 24h = Test, kein
-  Zufalls-Split, sonst Leakage aus der Zukunft), trainiert `XGBRegressor`, vergleicht
-  gegen eine Persistenz-Baseline ("in 1h wie jetzt" = `lag_1h`), speichert Modell +
-  Metriken unter `model/artifacts/` (gitignored).
+  Zufalls-Split, sonst Leakage aus der Zukunft). Trainiert **pro Horizont ein
+  XGBoost-Quantil-Modell** (natives `reg:quantileerror` mit `quantile_alpha=[0.1,0.5,0.9]`,
+  ein Modell liefert alle drei Quantile gleichzeitig). Horizonte: `features.HORIZONS =
+  [1,2,3,4,6,8,10,12]` Stunden. Vergleich gegen Persistenz-Baseline ("bleibt wie
+  jetzt"). Speichert Modelle als `model/artifacts/xgb_h<H>.json` + `metrics.json`
+  (Ordner gitignored, wird bei jedem Lauf neu erzeugt).
+- **`model/generate_predictions.py`** — lädt die trainierten Modelle, holt pro
+  Station den aktuellen Stand (letzter echter Poll, nicht resampled) + die
+  P10/P50/P90-Vorhersage je Horizont, schreibt `docs/data/predictions.json`
+  (gitignored, wird von der Karte geladen).
+- **`docs/index.html`** — statische Karte mit Leaflet (CDN), Slider 0–12h,
+  Stationsfarbe nach Füllstand, Klick/Popup zeigt aktuellen Stand + Vorhersage +
+  80%-Unsicherheitsband. Zwischen den trainierten Horizonten wird im Frontend linear
+  interpoliert (kein Modell pro einzelner Stunde, siehe unten warum).
+- **`.github/workflows/predict.yml`** — läuft stündlich (`25 * * * *`, versetzt zu
+  Collector/Wetter-Workflows), trainiert neu, generiert `predictions.json`, kopiert
+  `docs/` in einen separaten `gh-pages`-Branch (gleiches Worktree-Pattern wie
+  `collect.yml`/`weather.yml` für den `data`-Branch) und pusht. **main bleibt damit
+  weiterhin nur Code**, der `gh-pages`-Branch ist die deploybare Ausgabe.
 - **`requirements-model.txt`** — zusätzliche ML-Abhängigkeiten (xgboost,
   scikit-learn), getrennt von `requirements.txt`, damit der Collector (läuft auch in
   GitHub Actions) schlank bleibt.
+- **`.claude/launch.json`** — lokaler Static-Server (`python -m http.server` auf
+  `docs/`) zum Testen der Karte im Browser ohne GitHub Pages.
+
+### Warum Multi-Horizont mit nur 8 Ankerpunkten statt 12 Einzelmodellen?
+
+Bei 7 Tagen Historie bringt ein eigenes Modell pro Stunde (1,2,...,12) keinen
+Erkenntnisgewinn gegenüber Interpolation zwischen wenigen Ankern, erhöht aber
+Trainingszeit und Overfitting-Risiko. Mit wachsendem `data`-Branch kann man die Liste
+in `features.HORIZONS` einfach verfeinern.
+
+### Warum Quantile statt einer einzelnen Zahl?
+
+Der Nutzer wollte eine "Wahrscheinlichkeit" zum Wert sehen. Eine einzelne Prozentzahl
+wäre bei 7 Tagen Daten Scheingenauigkeit. Stattdessen: P10/P50/P90 als ehrliches
+80%-Unsicherheitsband, das mit wachsender Datenmenge automatisch enger wird.
+
+## Wichtige Korrektur gegenüber Session 1
+
+Die alte Persistenz-Baseline in `train.py` hat fälschlich `lag_1h` (Wert von vor 1h)
+mit dem 1h-Ziel verglichen, statt dem aktuellen Wert `bikes_available` zum
+Vorhersagezeitpunkt. Das ist jetzt korrigiert (`train_horizon()` nutzt
+`test_h["bikes_available"]` als Baseline). Dadurch sind die Zahlen aus Session 1
+(MAE 0.631 Baseline) **nicht direkt vergleichbar** mit den neuen, korrekteren Zahlen
+unten.
 
 ## Letztes Trainingsergebnis (mit ~7 Tagen Daten, Stand 2026-08-10)
 
 ```
-Baseline (Persistenz)  MAE=0.631  RMSE=1.478
-XGBoost                MAE=0.742  RMSE=1.447
+h= 1h  MAE baseline=0.349  MAE p50=0.657  RMSE p50=1.443  80%-Abdeckung=84.1%
+h= 2h  MAE baseline=0.592  MAE p50=0.855  RMSE p50=1.770  80%-Abdeckung=83.0%
+h= 3h  MAE baseline=0.778  MAE p50=1.010  RMSE p50=2.049  80%-Abdeckung=81.7%
+h= 4h  MAE baseline=0.935  MAE p50=1.136  RMSE p50=2.200  80%-Abdeckung=81.2%
+h= 6h  MAE baseline=1.184  MAE p50=1.342  RMSE p50=2.437  80%-Abdeckung=80.0%
+h= 8h  MAE baseline=1.389  MAE p50=1.494  RMSE p50=2.618  80%-Abdeckung=79.5%
+h=10h  MAE baseline=1.561  MAE p50=1.621  RMSE p50=2.787  80%-Abdeckung=78.2%
+h=12h  MAE baseline=1.704  MAE p50=1.723  RMSE p50=2.915  80%-Abdeckung=78.9%
 ```
 
-XGBoost schlägt die Baseline bei MAE noch nicht, bei RMSE minimal. Feature Importance:
-`lag_1h` (~64%) und `rolling_mean_3h` (~25%) dominieren, Zeit-/Wetter-Features tragen
-kaum bei. Das ist bei einer Woche Historie ohne vollen Wochenzyklus erwartbar — **kein
-Bug**, sondern der zu erwartende Zustand bei dieser Datenmenge.
+**Die Persistenz-Baseline schlägt XGBoost bei jedem Horizont.** Das ist konsistent mit
+Session 1: 7 Tage reichen noch nicht, damit Zeit-/Wetter-Features etwas beitragen, was
+"aktueller Wert bleibt ungefähr gleich" nicht auch könnte. Die 80%-Intervall-Abdeckung
+liegt aber gut bei ~80% (gute Kalibrierung der Quantile trotz wenig Daten) — die
+Unsicherheitsbänder sind also ehrlich, auch wenn der Mittelwert (P50) noch nicht
+besser als naiv ist.
+
+**Konsequenz:** Die Karte ist aktuell primär ein funktionierender Demo-Prototyp für
+UI/Pipeline, aber die Vorhersagequalität ist noch nicht besser als "schau auf den
+aktuellen Stand". Sollte man klar kommunizieren, falls die Karte geteilt wird.
 
 ## Wie man weitermacht
 
@@ -66,28 +118,47 @@ Bug**, sondern der zu erwartende Zustand bei dieser Datenmenge.
 git pull
 pip install -r requirements-model.txt
 python model/train.py
+python model/generate_predictions.py
+python -m http.server 8000 --directory docs   # lokal testen
 ```
 
 Lädt automatisch den aktuellen `data`-Branch, kein manueller Sync nötig.
 
+## GitHub Pages — noch nicht aktiviert!
+
+Der Plan war, dass Claude GitHub Pages automatisch aktiviert (Source: `gh-pages`-
+Branch), aber die lokale Umgebung hatte **kein `gh` CLI installiert**, daher konnte
+das nicht automatisiert werden. Zwei offene Schritte, bevor die Karte online ist:
+
+1. `.github/workflows/predict.yml` muss mindestens einmal laufen (automatisch stündlich,
+   oder manuell über GitHub → Actions → "Update prediction map" → "Run workflow"),
+   damit der `gh-pages`-Branch überhaupt existiert.
+2. Im Repo unter **Settings → Pages → Source** auf "Deploy from a branch" stellen,
+   Branch `gh-pages`, Ordner `/ (root)`. Danach ist die Karte unter
+   `https://felix-schnell.github.io/MyRadl_Vorhersage/` erreichbar (kann ein paar
+   Minuten dauern).
+
 ## Offene Punkte / nächste Schritte
 
-- **Einfach neu trainieren, sobald mehr Daten da sind** (Hauptaufgabe — die Pipeline
-  ist dafür ausgelegt). Sinnvoll wäre ein erneuter Check nach 2–3 Wochen, wenn
-  mindestens ein voller Wochenzyklus vorliegt.
-- **Andere Vorhersage-Horizonte testen** (z.B. 2h, 4h statt nur 1h) — aktuell ist der
-  Horizont mit `FORECAST_HORIZON` in `features.py` hart auf 1h ausgelegt (wird aber
-  aktuell noch nicht parametrisiert genutzt, nur als Dokumentation der Annahme).
-- **Metriken pro Station statt nur global** — aktuell wird ein globales MAE/RMSE über
-  alle Stationen berichtet. Sinnvoll wäre eine Aufschlüsselung, ob z.B. Stationen mit
-  fester Kapazität oder mit viel Verkehr besser/schlechter vorhergesagt werden.
-- **Hyperparameter-Tuning** — aktuell feste, ungetunte XGBoost-Parameter in
-  `train.py` (`n_estimators=300`, `max_depth=5`, etc.), war für den Prototyp nicht
-  nötig.
+- **GitHub Pages aktivieren** (siehe oben) — das Wichtigste, damit die Karte
+  überhaupt erreichbar ist.
+- **Einfach neu trainieren, sobald mehr Daten da sind** — die Pipeline läuft eh
+  stündlich automatisch neu (`predict.yml`), sollte also von selbst besser werden.
+  Sinnvoll wäre ein bewusster Check nach 2–3 Wochen, wenn mindestens ein voller
+  Wochenzyklus vorliegt, ob die Baseline endlich geschlagen wird.
+- **Trainingszeit im Auge behalten** — `predict.yml` trainiert bei jedem Lauf (stündlich)
+  alle 8 Horizont-Modelle komplett neu. Das skaliert nicht ewig; wenn der `data`-Branch
+  deutlich wächst, Training und Predictions-Generierung entkoppeln (z.B. Training nur
+  täglich, Predictions stündlich mit dem zuletzt trainierten, committeten Modell).
+- **Metriken pro Station statt nur global** — aktuell wird MAE/RMSE über alle
+  Stationen gemittelt berichtet. Aufschlüsselung nach Stationstyp (fest/virtuell,
+  viel/wenig Verkehr) wäre informativ.
+- **Hyperparameter-Tuning** — aktuell feste, ungetunte XGBoost-Parameter.
 - **Stationsspezifische Historie als Feature** (z.B. mittlere Auslastung je Station/
-  Stunde) — aktuell nicht enthalten, könnte mit mehr Daten helfen, macht bei 7 Tagen
-  aber noch keinen Sinn (zu wenig Wiederholungen pro Station/Stunde-Kombination).
-- **`docks_available` ist aktuell komplett ungenutzt** (siehe Erkenntnis oben) — kein
-  offener Punkt, sondern bewusste Entscheidung, aber gut zu wissen falls jemand fragt
-  warum das Feature fehlt.
-- Kein Deployment/Serving-Code vorhanden — bisher nur Trainings-/Evaluations-Skript.
+  Stunde) — macht bei 7 Tagen noch keinen Sinn (zu wenig Wiederholungen), später
+  nachrüstbar.
+- **`docks_available` ist weiterhin komplett ungenutzt** (nur 10/786 Stationen mit
+  fester Kapazität) — bewusste Entscheidung, kein offener Punkt.
+- Karte hat aktuell keinerlei Caching/Performance-Optimierung für die
+  `predictions.json` (~470 KB bei 786 Stationen) — für den Prototyp okay, bei viel
+  mehr Stationen oder Horizonten ggf. Kompression/Pagination nötig.

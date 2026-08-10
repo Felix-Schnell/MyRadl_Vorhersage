@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MyRadl Vorhersage</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  html, body { margin: 0; height: 100%; font-family: system-ui, sans-serif; }
+  #map { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
+  #panel {
+    position: absolute; top: 12px; left: 12px; z-index: 1000;
+    background: rgba(255,255,255,0.95); padding: 14px 16px; border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25); width: 300px; max-width: calc(100vw - 40px);
+  }
+  #panel h1 { font-size: 16px; margin: 0 0 4px; }
+  #panel .meta { font-size: 12px; color: #555; margin-bottom: 10px; }
+  #panel label { font-size: 13px; font-weight: 600; display: block; margin-bottom: 4px; }
+  #panel input[type=range] { width: 100%; }
+  #panel .hourval { font-size: 13px; text-align: center; margin-top: 2px; }
+  .legend { position: absolute; bottom: 20px; left: 12px; z-index: 1000; background: rgba(255,255,255,0.95);
+    padding: 8px 12px; border-radius: 8px; font-size: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+  .legend span { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; }
+  .popup-title { font-weight: 600; margin-bottom: 4px; }
+  .popup-row { font-size: 13px; margin: 2px 0; }
+  .popup-band { color: #666; }
+  .disclaimer { font-size: 11px; color: #888; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div id="panel">
+  <h1>MyRadl Vorhersage</h1>
+  <div class="meta" id="generated-at">lädt ...</div>
+  <label for="slider">Vorhersage-Horizont: <span id="hourval">jetzt</span></label>
+  <input type="range" id="slider" min="0" max="12" step="1" value="0">
+  <div class="disclaimer">
+    Prototyp mit ~1 Woche Trainingsdaten. Band = P10-P90 (80%-Unsicherheitsintervall),
+    keine belastbare Punktvorhersage.
+  </div>
+</div>
+<div class="legend">
+  <div><span style="background:#2166ac"></span>viel frei</div>
+  <div><span style="background:#f7f7f7;border:1px solid #999"></span>mittel</div>
+  <div><span style="background:#b2182b"></span>wenig frei</div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const map = L.map('map').setView([48.1437, 11.5552], 11);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap Mitwirkende',
+  maxZoom: 19,
+}).addTo(map);
+
+const slider = document.getElementById('slider');
+const hourval = document.getElementById('hourval');
+const generatedAtEl = document.getElementById('generated-at');
+
+let data = null;
+let markers = [];
+
+function colorForFillRatio(ratio) {
+  // ratio: 0 (leer) .. 1 (voll je nach Kontext hier: Raeder/geschaetzte Referenzmenge)
+  if (ratio === null || isNaN(ratio)) return '#999';
+  const clamped = Math.max(0, Math.min(1, ratio));
+  const r = clamped < 0.5 ? Math.round(33 + (247 - 33) * (clamped / 0.5)) : Math.round(247 + (178 - 247) * ((clamped - 0.5) / 0.5));
+  const g = clamped < 0.5 ? Math.round(102 + (247 - 102) * (clamped / 0.5)) : Math.round(247 + (24 - 247) * ((clamped - 0.5) / 0.5));
+  const b = clamped < 0.5 ? Math.round(172 + (247 - 172) * (clamped / 0.5)) : Math.round(247 + (43 - 247) * ((clamped - 0.5) / 0.5));
+  return `rgb(${r},${g},${b})`;
+}
+
+function interpolateForecast(station, hours) {
+  if (hours === 0) {
+    if (!station.current) return null;
+    return { p10: station.current.bikes_available, p50: station.current.bikes_available, p90: station.current.bikes_available };
+  }
+  const horizons = data.horizons;
+  const keys = Object.keys(station.forecast);
+  if (keys.length === 0) return null;
+
+  if (hours <= horizons[0]) return station.forecast[String(horizons[0])];
+  if (hours >= horizons[horizons.length - 1]) return station.forecast[String(horizons[horizons.length - 1])];
+
+  let lo = horizons[0], hi = horizons[horizons.length - 1];
+  for (let i = 0; i < horizons.length - 1; i++) {
+    if (horizons[i] <= hours && hours <= horizons[i + 1]) {
+      lo = horizons[i]; hi = horizons[i + 1]; break;
+    }
+  }
+  const fLo = station.forecast[String(lo)];
+  const fHi = station.forecast[String(hi)];
+  if (!fLo || !fHi) return fLo || fHi || null;
+  const t = (hours - lo) / (hi - lo);
+  const lerp = (a, b) => a + (b - a) * t;
+  return { p10: lerp(fLo.p10, fHi.p10), p50: lerp(fLo.p50, fHi.p50), p90: lerp(fLo.p90, fHi.p90) };
+}
+
+function referenceMax(station) {
+  if (station.capacity) return station.capacity;
+  // Virtuelle Stationen haben keine feste Kapazitaet: Referenz aus Vorhersageband ableiten.
+  const allVals = [station.current ? station.current.bikes_available : 0];
+  Object.values(station.forecast || {}).forEach(f => allVals.push(f.p90));
+  return Math.max(5, Math.max(...allVals));
+}
+
+function render() {
+  const hours = parseInt(slider.value, 10);
+  hourval.textContent = hours === 0 ? 'jetzt' : `in ${hours} h`;
+
+  markers.forEach(m => map.removeLayer(m));
+  markers = [];
+
+  data.stations.forEach(station => {
+    if (!station.current) return;
+    const f = interpolateForecast(station, hours);
+    const value = f ? f.p50 : station.current.bikes_available;
+    const refMax = referenceMax(station);
+    const ratio = 1 - (value / refMax); // wenig Raeder frei -> rot, viel frei -> blau
+    const color = colorForFillRatio(ratio);
+
+    const marker = L.circleMarker([station.lat, station.lon], {
+      radius: 6,
+      fillColor: color,
+      color: '#333',
+      weight: 1,
+      fillOpacity: 0.85,
+    }).addTo(map);
+
+    marker.bindPopup(() => {
+      const cur = station.current;
+      let html = `<div class="popup-title">${station.name}</div>`;
+      html += `<div class="popup-row">Aktuell (${new Date(cur.timestamp).toLocaleString('de-DE')}): <b>${cur.bikes_available} Räder</b></div>`;
+      if (hours > 0 && f) {
+        html += `<div class="popup-row">In ${hours}h: <b>${f.p50.toFixed(1)} Räder</b></div>`;
+        html += `<div class="popup-row popup-band">80%-Band: ${f.p10.toFixed(1)} – ${f.p90.toFixed(1)} Räder</div>`;
+      } else if (hours > 0) {
+        html += `<div class="popup-row popup-band">Keine Vorhersage verfügbar (fehlende Features)</div>`;
+      }
+      return html;
+    });
+
+    markers.push(marker);
+  });
+}
+
+slider.addEventListener('input', render);
+
+fetch('data/predictions.json')
+  .then(r => r.json())
+  .then(json => {
+    data = json;
+    generatedAtEl.textContent = 'Stand: ' + new Date(json.generated_at).toLocaleString('de-DE');
+    slider.max = json.horizons[json.horizons.length - 1];
+    render();
+  })
+  .catch(err => {
+    generatedAtEl.textContent = 'Fehler beim Laden der Daten: ' + err;
+  });
+</script>
+</body>
+</html>
