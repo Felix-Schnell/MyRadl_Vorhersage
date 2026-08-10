@@ -101,3 +101,32 @@ und der Rechner läuft — es gibt Lücken bei Neustart, Schlafmodus oder Abstur
 GitHub-Actions-Workflow oben deckt das ab, solange das Repo public bleibt und niemand die
 Scheduled Workflows deaktiviert (GitHub pausiert sie automatisch nach 60 Tagen Inaktivität
 im Repo — dann reicht ein beliebiger Commit/Push, um sie zu reaktivieren).
+
+Ausserdem haelt sich GitHub bei `schedule`-Triggern in der Praxis nicht an die
+konfigurierten 15 Minuten: real kommen oft nur 6–30 Polls pro Tag mit Luecken von
+30 Minuten bis über 2 Stunden an, statt der theoretischen ~96. Das Feature Engineering im
+`model/`-Ordner geht davon bewusst aus (stündliches Resampling statt fester Lags).
+
+## Vorhersagemodell (Prototyp)
+
+Erster grober Baseline-Ansatz im `model/`-Ordner: XGBoost-Regression, die
+`bikes_available` pro Station eine Stunde in die Zukunft vorhersagt.
+
+```bash
+pip install -r requirements-model.txt
+python model/train.py
+```
+
+Das Skript lädt die Daten direkt aus dem `data`-Branch (kein lokaler Checkout nötig),
+resampled pro Station auf ein stündliches Raster (die Polls kommen zu unregelmäßig für
+feste Lags), baut Zeit-, Wetter-, Stations- und Lag-Features und trainiert mit einem
+zeitbasierten Train/Test-Split (letzter Tag = Test). Ergebnis wird gegen eine
+Persistenz-Baseline ("in 1h wie jetzt") verglichen und unter `model/artifacts/`
+gespeichert.
+
+**Stand mit ~7 Tagen Daten:** Die Baseline schlägt XGBoost bei MAE knapp (0.63 vs. 0.74),
+bei RMSE liegt XGBoost leicht vorn (1.45 vs. 1.48) — mit dieser Datenmenge dominiert der
+letzte bekannte Wert (`lag_1h`) mit ~64% Feature-Importance alles andere, Zeit- und
+Wetter-Features tragen noch kaum etwas bei. Erwartbar bei einer Woche Historie ohne
+vollen Wochenzyklus; die Pipeline ist aber darauf ausgelegt, mit wachsendem
+`data`-Branch einfach erneut ausgeführt zu werden.
