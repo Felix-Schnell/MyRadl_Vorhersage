@@ -1,5 +1,5 @@
 {
-  "trained_at": "2026-08-16T08:33:34.022953+00:00",
+  "trained_at": "2026-09-04T16:06:52.909145+00:00",
   "horizons": [
     1,
     2,
@@ -40,75 +40,75 @@
   "results": [
     {
       "horizon_hours": 1,
-      "train_rows": 178175,
-      "test_rows": 18032,
-      "baseline_mae": 0.41603815439219166,
-      "model_mae": 0.7292614759630799,
-      "model_rmse": 1.574176116217964,
-      "coverage_80pct": 0.7695208518189884
+      "train_rows": 502323,
+      "test_rows": 18014,
+      "baseline_mae": 0.2626845786610414,
+      "model_mae": 0.513562802843353,
+      "model_rmse": 1.2447442927891743,
+      "coverage_80pct": 0.7579105140446319
     },
     {
       "horizon_hours": 2,
-      "train_rows": 178174,
-      "test_rows": 17248,
-      "baseline_mae": 0.689935064935065,
-      "model_mae": 0.9395971646691276,
-      "model_rmse": 1.9049210414714601,
-      "coverage_80pct": 0.7662917439703154
+      "train_rows": 501536,
+      "test_rows": 17227,
+      "baseline_mae": 0.49225053694781445,
+      "model_mae": 0.7295612548395469,
+      "model_rmse": 1.507265974413154,
+      "coverage_80pct": 0.7784872583734835
     },
     {
       "horizon_hours": 3,
-      "train_rows": 177388,
-      "test_rows": 16464,
-      "baseline_mae": 0.8972303206997084,
-      "model_mae": 1.103277564233756,
-      "model_rmse": 2.128097539502927,
-      "coverage_80pct": 0.7507896015549077
+      "train_rows": 496824,
+      "test_rows": 16442,
+      "baseline_mae": 0.6678019705631918,
+      "model_mae": 0.8778381777258436,
+      "model_rmse": 1.679208466543648,
+      "coverage_80pct": 0.7845152657827514
     },
     {
       "horizon_hours": 4,
-      "train_rows": 176602,
-      "test_rows": 15680,
-      "baseline_mae": 1.0763392857142857,
-      "model_mae": 1.2356669220556649,
-      "model_rmse": 2.2815097503260713,
-      "coverage_80pct": 0.7487882653061224
+      "train_rows": 494467,
+      "test_rows": 15657,
+      "baseline_mae": 0.8324710991888612,
+      "model_mae": 1.003925432138634,
+      "model_rmse": 1.824106462420265,
+      "coverage_80pct": 0.7945966660279747
     },
     {
       "horizon_hours": 6,
-      "train_rows": 175030,
-      "test_rows": 14112,
-      "baseline_mae": 1.3581349206349207,
-      "model_mae": 1.460450737513132,
-      "model_rmse": 2.4840003130645516,
-      "coverage_80pct": 0.7482993197278912
+      "train_rows": 493676,
+      "test_rows": 14089,
+      "baseline_mae": 1.0484775356661225,
+      "model_mae": 1.1607194572061288,
+      "model_rmse": 1.9863040302050927,
+      "coverage_80pct": 0.7986372347221237
     },
     {
       "horizon_hours": 8,
-      "train_rows": 175028,
-      "test_rows": 12544,
-      "baseline_mae": 1.6005261479591837,
-      "model_mae": 1.6379789726549405,
-      "model_rmse": 2.634943092761466,
-      "coverage_80pct": 0.7599649234693877
+      "train_rows": 495238,
+      "test_rows": 12523,
+      "baseline_mae": 1.2148846123133434,
+      "model_mae": 1.311045643910474,
+      "model_rmse": 2.1158549367129926,
+      "coverage_80pct": 0.8048390960632437
     },
     {
       "horizon_hours": 10,
-      "train_rows": 175026,
-      "test_rows": 10976,
-      "baseline_mae": 1.811862244897959,
-      "model_mae": 1.776243418791812,
-      "model_rmse": 2.775566863162767,
-      "coverage_80pct": 0.7619351311953353
+      "train_rows": 496800,
+      "test_rows": 10957,
+      "baseline_mae": 1.3770192570959203,
+      "model_mae": 1.4369658967776706,
+      "model_rmse": 2.230531332398481,
+      "coverage_80pct": 0.8023181527790454
     },
     {
       "horizon_hours": 12,
-      "train_rows": 175024,
-      "test_rows": 9408,
-      "baseline_mae": 1.999362244897959,
-      "model_mae": 1.8816336403081357,
-      "model_rmse": 2.8749711788666907,
-      "coverage_80pct": 0.7495748299319728
+      "train_rows": 495224,
+      "test_rows": 9391,
+      "baseline_mae": 1.5165584069854117,
+      "model_mae": 1.522255754657427,
+      "model_rmse": 2.2971911990624805,
+      "coverage_80pct": 0.8046001490789053
     }
   ]
 }
