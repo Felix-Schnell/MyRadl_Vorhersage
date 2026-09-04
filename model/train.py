@@ -44,6 +44,12 @@ def train_horizon(train_df: pd.DataFrame, test_df: pd.DataFrame, horizon: int) -
     cols_needed = [*FEATURE_COLUMNS, target_col]
     train_h = train_df.dropna(subset=cols_needed)
     test_h = test_df.dropna(subset=cols_needed)
+    # Nach dropna evtl. weiterhin object-dtype (z.B. Stationen fehlend in stations.csv,
+    # daher NaN beim Merge, die bool-Spalten auf object kippen lassen), fuer XGBoost
+    # wieder auf bool casten.
+    bool_cols = ["has_fixed_capacity", "is_virtual_station"]
+    train_h = train_h.astype({c: bool for c in bool_cols})
+    test_h = test_h.astype({c: bool for c in bool_cols})
 
     if len(train_h) < 100 or len(test_h) == 0:
         print(f"  h={horizon:>2d}h  zu wenige Zeilen ({len(train_h)} train / {len(test_h)} test), uebersprungen")
