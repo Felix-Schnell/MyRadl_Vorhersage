@@ -91,9 +91,12 @@ def main() -> None:
         entry["forecast"] = forecast
         station_rows.append(entry)
 
+    training_days = (status["timestamp"].max() - status["timestamp"].min()).days
+
     output = {
         "generated_at": pd.Timestamp.now("UTC").isoformat(),
         "horizons": HORIZONS,
+        "training_days": training_days,
         "stations": station_rows,
     }
 
