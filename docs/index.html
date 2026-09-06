@@ -34,9 +34,8 @@
   <div class="meta" id="generated-at">lädt ...</div>
   <label for="slider">Vorhersage-Horizont: <span id="hourval">jetzt</span></label>
   <input type="range" id="slider" min="0" max="12" step="1" value="0">
-  <div class="disclaimer">
-    Prototyp mit ~1 Woche Trainingsdaten. Band = P10-P90 (80%-Unsicherheitsintervall),
-    keine belastbare Punktvorhersage.
+  <div class="disclaimer" id="disclaimer">
+    Prototyp. Band = P10-P90 (80%-Unsicherheitsintervall), keine belastbare Punktvorhersage.
   </div>
 </div>
 <div class="legend">
@@ -56,6 +55,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const slider = document.getElementById('slider');
 const hourval = document.getElementById('hourval');
 const generatedAtEl = document.getElementById('generated-at');
+const disclaimerEl = document.getElementById('disclaimer');
 
 let data = null;
 let markers = [];
@@ -151,6 +151,11 @@ fetch('data/predictions.json')
   .then(json => {
     data = json;
     generatedAtEl.textContent = 'Stand: ' + new Date(json.generated_at).toLocaleString('de-DE');
+    if (typeof json.training_days === 'number') {
+      disclaimerEl.textContent =
+        `Prototyp mit ~${json.training_days} Tagen Trainingsdaten. Band = P10-P90 ` +
+        '(80%-Unsicherheitsintervall), keine belastbare Punktvorhersage.';
+    }
     slider.max = json.horizons[json.horizons.length - 1];
     render();
   })
