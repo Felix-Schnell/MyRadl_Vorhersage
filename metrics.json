@@ -1,5 +1,5 @@
 {
-  "trained_at": "2026-09-14T08:44:01.078508+00:00",
+  "trained_at": "2026-09-21T08:46:03.128446+00:00",
   "horizons": [
     1,
     2,
@@ -40,75 +40,75 @@
   "results": [
     {
       "horizon_hours": 1,
-      "train_rows": 683452,
-      "test_rows": 17994,
-      "baseline_mae": 0.19400911414916083,
-      "model_mae": 0.4047565218323619,
-      "model_rmse": 1.1034328325169172,
-      "coverage_80pct": 0.9144714904968323
+      "train_rows": 811321,
+      "test_rows": 17779,
+      "baseline_mae": 0.22762810056808594,
+      "model_mae": 0.4531255040276561,
+      "model_rmse": 1.1996603385692635,
+      "coverage_80pct": 0.9101749254738737
     },
     {
       "horizon_hours": 2,
-      "train_rows": 682660,
-      "test_rows": 17211,
-      "baseline_mae": 0.3769682180001162,
-      "model_mae": 0.6032796098906159,
-      "model_rmse": 1.3657305086711309,
-      "coverage_80pct": 0.9040148742083551
+      "train_rows": 810517,
+      "test_rows": 17006,
+      "baseline_mae": 0.42884864165588615,
+      "model_mae": 0.6603870983459935,
+      "model_rmse": 1.4552561211483164,
+      "coverage_80pct": 0.9001528872162766
     },
     {
       "horizon_hours": 3,
-      "train_rows": 677943,
-      "test_rows": 16428,
-      "baseline_mae": 0.5690893596299001,
-      "model_mae": 0.7760734672132533,
-      "model_rmse": 1.5714162979911082,
-      "coverage_80pct": 0.8893352812271731
+      "train_rows": 805788,
+      "test_rows": 16233,
+      "baseline_mae": 0.6213885295385942,
+      "model_mae": 0.8487905277897847,
+      "model_rmse": 1.67623773780952,
+      "coverage_80pct": 0.8854801946651882
     },
     {
       "horizon_hours": 4,
-      "train_rows": 675581,
-      "test_rows": 15645,
-      "baseline_mae": 0.7461808884627676,
-      "model_mae": 0.9211659072361977,
-      "model_rmse": 1.7588594999314429,
-      "coverage_80pct": 0.880089485458613
+      "train_rows": 803414,
+      "test_rows": 15460,
+      "baseline_mae": 0.8202457956015524,
+      "model_mae": 1.0069585256649598,
+      "model_rmse": 1.8479698022125968,
+      "coverage_80pct": 0.8779430789133247
     },
     {
       "horizon_hours": 6,
-      "train_rows": 674782,
-      "test_rows": 14079,
-      "baseline_mae": 0.9220825342708999,
-      "model_mae": 1.1202596819902395,
-      "model_rmse": 2.025886864087687,
-      "coverage_80pct": 0.881525676539527
+      "train_rows": 802591,
+      "test_rows": 13914,
+      "baseline_mae": 1.0866034210148052,
+      "model_mae": 1.2607081533994726,
+      "model_rmse": 2.110024229995617,
+      "coverage_80pct": 0.8653873796176513
     },
     {
       "horizon_hours": 8,
-      "train_rows": 676338,
-      "test_rows": 12513,
-      "baseline_mae": 1.1086070486693838,
-      "model_mae": 1.3096952312619619,
-      "model_rmse": 2.2507341923563273,
-      "coverage_80pct": 0.8720530648125949
+      "train_rows": 804123,
+      "test_rows": 12368,
+      "baseline_mae": 1.295682406209573,
+      "model_mae": 1.4692472837406243,
+      "model_rmse": 2.331687991567969,
+      "coverage_80pct": 0.8461351875808538
     },
     {
       "horizon_hours": 10,
-      "train_rows": 677893,
-      "test_rows": 10948,
-      "baseline_mae": 1.2660759956156376,
-      "model_mae": 1.4661698561593222,
-      "model_rmse": 2.431240802312378,
-      "coverage_80pct": 0.8639020825721593
+      "train_rows": 805655,
+      "test_rows": 10822,
+      "baseline_mae": 1.4968582517094806,
+      "model_mae": 1.6456850689476639,
+      "model_rmse": 2.515226290885673,
+      "coverage_80pct": 0.8272038440214378
     },
     {
       "horizon_hours": 12,
-      "train_rows": 676309,
-      "test_rows": 9384,
-      "baseline_mae": 1.4321184995737426,
-      "model_mae": 1.6017523554152946,
-      "model_rmse": 2.5793825506526176,
-      "coverage_80pct": 0.8583759590792839
+      "train_rows": 804049,
+      "test_rows": 9276,
+      "baseline_mae": 1.6766925398878827,
+      "model_mae": 1.791087978908655,
+      "model_rmse": 2.6658670849226493,
+      "coverage_80pct": 0.8101552393272963
     }
   ]
 }
