@@ -1,5 +1,5 @@
 {
-  "trained_at": "2026-09-28T09:34:48.112116+00:00",
+  "trained_at": "2026-10-19T08:42:33.668033+00:00",
   "horizons": [
     1,
     2,
@@ -40,75 +40,75 @@
   "results": [
     {
       "horizon_hours": 1,
-      "train_rows": 936871,
-      "test_rows": 17810,
-      "baseline_mae": 0.24104435710275127,
-      "model_mae": 0.5068814962482974,
-      "model_rmse": 1.4526872877066654,
-      "coverage_80pct": 0.904884896125772
+      "train_rows": 1241598,
+      "test_rows": 17894,
+      "baseline_mae": 0.18570470548787302,
+      "model_mae": 0.4086473241651163,
+      "model_rmse": 1.0546716827010372,
+      "coverage_80pct": 0.9061696658097687
     },
     {
       "horizon_hours": 2,
-      "train_rows": 936063,
-      "test_rows": 17035,
-      "baseline_mae": 0.48511887290871736,
-      "model_mae": 0.7637729362658456,
-      "model_rmse": 1.7799845963179315,
-      "coverage_80pct": 0.8811857939536248
+      "train_rows": 1243116,
+      "test_rows": 17116,
+      "baseline_mae": 0.37993690114512735,
+      "model_mae": 0.5987145126839347,
+      "model_rmse": 1.303613019208292,
+      "coverage_80pct": 0.895361065669549
     },
     {
       "horizon_hours": 3,
-      "train_rows": 931330,
-      "test_rows": 16260,
-      "baseline_mae": 0.7130381303813038,
-      "model_mae": 0.9840952346120734,
-      "model_rmse": 2.030826805790435,
-      "coverage_80pct": 0.8594710947109471
+      "train_rows": 1237606,
+      "test_rows": 16338,
+      "baseline_mae": 0.569163912351573,
+      "model_mae": 0.7756284843475707,
+      "model_rmse": 1.5096941430747248,
+      "coverage_80pct": 0.892336883339454
     },
     {
       "horizon_hours": 4,
-      "train_rows": 928952,
-      "test_rows": 15485,
-      "baseline_mae": 0.9637713916693574,
-      "model_mae": 1.154723673458727,
-      "model_rmse": 2.2077182423697943,
-      "coverage_80pct": 0.8522441072005166
+      "train_rows": 1242199,
+      "test_rows": 15560,
+      "baseline_mae": 0.745694087403599,
+      "model_mae": 0.9415643739982558,
+      "model_rmse": 1.7093199719104561,
+      "coverage_80pct": 0.880012853470437
     },
     {
       "horizon_hours": 6,
-      "train_rows": 928121,
-      "test_rows": 13935,
-      "baseline_mae": 1.338356655902404,
-      "model_mae": 1.4773178985470703,
-      "model_rmse": 2.5385399208745514,
-      "coverage_80pct": 0.8377466810190168
+      "train_rows": 1239038,
+      "test_rows": 14004,
+      "baseline_mae": 1.0255641245358469,
+      "model_mae": 1.2094745739697883,
+      "model_rmse": 2.0259163015920922,
+      "coverage_80pct": 0.8739645815481291
     },
     {
       "horizon_hours": 8,
-      "train_rows": 929645,
-      "test_rows": 12385,
-      "baseline_mae": 1.6876059749697214,
-      "model_mae": 1.754948949695181,
-      "model_rmse": 2.8209867962497737,
-      "coverage_80pct": 0.818167137666532
+      "train_rows": 1232811,
+      "test_rows": 12448,
+      "baseline_mae": 1.2765102827763497,
+      "model_mae": 1.4244133717768053,
+      "model_rmse": 2.2482349154037307,
+      "coverage_80pct": 0.8633515424164524
     },
     {
       "horizon_hours": 10,
-      "train_rows": 931168,
-      "test_rows": 10836,
-      "baseline_mae": 1.8624953857511997,
-      "model_mae": 1.8878644654158079,
-      "model_rmse": 2.944263918167088,
-      "coverage_80pct": 0.8135843484680694
+      "train_rows": 1232784,
+      "test_rows": 10892,
+      "baseline_mae": 1.4825560044069042,
+      "model_mae": 1.5765445350402205,
+      "model_rmse": 2.396644576009528,
+      "coverage_80pct": 0.8554902680866692
     },
     {
       "horizon_hours": 12,
-      "train_rows": 929552,
-      "test_rows": 9288,
-      "baseline_mae": 2.0165805340223946,
-      "model_mae": 1.9518962746083377,
-      "model_rmse": 2.9766265022022824,
-      "coverage_80pct": 0.8099698535745047
+      "train_rows": 1233489,
+      "test_rows": 9336,
+      "baseline_mae": 1.6323907455012854,
+      "model_mae": 1.6730707668106375,
+      "model_rmse": 2.478317115696108,
+      "coverage_80pct": 0.8443658954584404
     }
   ]
 }
